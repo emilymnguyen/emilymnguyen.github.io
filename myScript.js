@@ -57,11 +57,6 @@ function isIE()
 }
 
 var main = function () {
-    // Set up
-  //  $('#portfolio-expand').hide();
-  //  $('#portfolio').hide();
-//    $('#resume').hide();
-  //  $('#contact').hide();
     $('body').css('background-color', '#f2f2f2');
     
     
@@ -74,37 +69,17 @@ var main = function () {
     $('.circle').hover(function () {
         $(this).effect('shake', {times:2, distance: 3}, 400 );
     });
-   
-    /*
-    var htmlOrBody = 'html';
-    if($.browser.webkit)
-        htmlOrBody = '';
-        */
     
     /* MENU CLICK */
     $('nav li').click(function () {
         // Scroll to footer if contact is clicked on
         if ($(this).hasClass('contact') === true) {
-        
-            
+               
             $('html, body').animate({ 
             scrollTop: $(document).height()-$(window).height()-5}, 300).promise().then(function() {
                
-           //     $('.fb').animate({opacity: 0});
-          //      $('.fb').animate({opacity:1});
                 $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
             }); 
-        
-            
-            /*
-            var container = $('html,body');
-            var scrollTo = $('#footer');
-            container.animate({
-                scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-            }).promise().done(function() {
-                 $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
-            });
-            */
             
             return;
         }
@@ -118,7 +93,6 @@ var main = function () {
         $(this).addClass('active-nav');
         
         // Fade out old page
-        //$('.active').fadeOut(300).removeClass('active');
         $('.active').hide().removeClass('active');
         
         // Update active page pointer
@@ -173,6 +147,7 @@ var main = function () {
     /* PORTFOLIO EXPAND */
     $('#portfolio .more').click(function () {
         
+        /* CENTER IMAGES */
         // Get pics
         var pic = $(this).closest('table').find('img');
         var expandedPic = $('#portfolio-expand img');
@@ -208,7 +183,6 @@ var main = function () {
     });
      
 };
-
 
 $(document).ready(main);
 
