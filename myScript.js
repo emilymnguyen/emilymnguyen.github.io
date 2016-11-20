@@ -64,19 +64,39 @@ function contact() {
             }); 
     return;
 }
+
 function home() {
-     // Update active nav pointer
-        $('.active-nav').removeClass('active-nav');
-        $('.home').addClass('active-nav');
+    // Update active nav pointer
+    $('.active-nav').removeClass('active-nav');
+    $('.home').addClass('active-nav');
         
-        // Fade out old page
-        $('.active').hide().removeClass('active');
-   $('#home').addClass('active');  
+    // Fade out old page
+    $('.active').hide().removeClass('active');
+    $('#home').addClass('active');  
     
-       // Fade in new active page
-        $('.active').show();
+    // Fade in new active page
+    $('.active').show();
     
-       $('body').css('background-color','#f2f2f2');
+    // Update background color
+    $('body').css('background-color','#f2f2f2');
+    return;
+}
+
+function portfolio() {
+    // Update active nav pointer
+    $('.active-nav').removeClass('active-nav');
+    $('.portfolio').addClass('active-nav');
+        
+    // Fade out old page
+    $('.active').hide().removeClass('active');
+    $('#portfolio').addClass('active'); 
+    $('#portfolio').css('display', '');
+    
+    // Fade in new active page
+    $('.active').show();
+    
+    // Update background color
+    $('body').css('background-color','white');
     return;
 }
     
@@ -121,8 +141,8 @@ var main = function () {
             return;
         }
         else if ($(this).hasClass('portfolio') === true) {
-            $('#portfolio').addClass('active');
-            $('#portfolio').css('display', '');
+            portfolio();
+            return;
         }
         else if ($(this).hasClass('resume') === true) {
             $('#resume').addClass('active');
