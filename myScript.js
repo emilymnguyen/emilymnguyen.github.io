@@ -66,7 +66,7 @@ function contact() {
 }
 
 
-function goTo(link) {
+function navClick(link) {
      if ($(link).hasClass('contact-link') === true) {
             contact(); 
             return;
@@ -86,9 +86,9 @@ function goTo(link) {
         return;
 }
 
-/*
-function goTo(page) {
-    var pageClass = "." + page;
+
+function nav(page) {
+    var pageClass = "." + page + "-link";
     var pageID = "#" + page;
     
     // Update active nav pointer
@@ -109,7 +109,7 @@ function goTo(page) {
     else
         $('body').css('background-color','white');
     return;
-} */
+} 
 
 function home() {
     // Update active nav pointer
@@ -198,13 +198,8 @@ var main = function () {
     $('body').css('background-color', '#f2f2f2');
     
     // Check hash to load correct page
-    var hash = window.location.hash;
-    if (hash === "#home")
-        home();
-    else if (hash === "#portfolio")
-        portfolio();
-    else if (hash === "#resume")
-        resume();
+    var hash = window.location.hash.substr(1);
+    nav(hash);
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
@@ -218,7 +213,7 @@ var main = function () {
     
     /* MENU CLICK */
     $('nav li').click(function () {
-        goTo(this);
+        navClick(this);
         return;
     });
     
