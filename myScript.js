@@ -99,6 +99,24 @@ function portfolio() {
     $('body').css('background-color','white');
     return;
 }
+
+function resume() {
+    // Update active nav pointer
+    $('.active-nav').removeClass('active-nav');
+    $('.resume').addClass('active-nav');
+        
+    // Fade out old page
+    $('.active').hide().removeClass('active');
+    $('#resume').addClass('active'); 
+    $('#resume').css('display', '');
+    
+    // Fade in new active page
+    $('.active').show();
+    
+    // Update background color
+    $('body').css('background-color','white');
+    return;
+}
     
 var main = function () {
     var hash = location.hash;
@@ -128,35 +146,14 @@ var main = function () {
             return;
         }
         
-        // Update active nav pointer
-        $('.active-nav').removeClass('active-nav');
-        $(this).addClass('active-nav');
-        
-        // Fade out old page
-        $('.active').hide().removeClass('active');
-        
         // Update active page pointer
-        if ($(this).hasClass('home') === true) {
-            home();
-            return;
-        }
-        else if ($(this).hasClass('portfolio') === true) {
-            portfolio();
-            return;
-        }
-        else if ($(this).hasClass('resume') === true) {
-            $('#resume').addClass('active');
-            $('#resume').css('display', '');
-        }
-        
-        // Fade in new active page
-        $('.active').show();
-       
-        // Update container background color
         if ($(this).hasClass('home') === true) 
-            $('body').css('background-color','#f2f2f2');
-        else
-            $('body').css('background-color','white');
+            home();
+        else if ($(this).hasClass('portfolio') === true) 
+            portfolio();
+        else if ($(this).hasClass('resume') === true)
+            resume();
+        return;
     });
     
     /* HOME LINKS */
