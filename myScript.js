@@ -205,7 +205,6 @@ var main = function () {
         portfolio();
     else if (hash === "#resume")
         resume();
-    alert("hash: "+ hash);
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
