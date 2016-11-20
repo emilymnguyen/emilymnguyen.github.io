@@ -198,13 +198,14 @@ var main = function () {
     $('body').css('background-color', '#f2f2f2');
     
     // Check hash to load correct page
-    var hash = location.hash;
+    var hash = window.location.hash;
     if (hash === "#home")
         home();
     else if (hash === "#portfolio")
         portfolio();
     else if (hash === "#resume")
         resume();
+    alert("hash: "+ hash);
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
