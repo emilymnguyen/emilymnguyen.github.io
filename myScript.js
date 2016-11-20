@@ -65,10 +65,56 @@ function contact() {
     return;
 }
 
+
+function goTo(link) {
+     if ($(link).hasClass('contact-link') === true) {
+            contact(); 
+            return;
+        }
+        // Return if active nav was clicked on
+        if ($(link).hasClass('active-nav') === true) {
+            return;
+        }
+        
+        // Update active page
+        if ($(link).hasClass('home-link') === true) 
+            home();
+        else if ($(link).hasClass('portfolio-link') === true) 
+            portfolio();
+        else if ($(link).hasClass('resume-link') === true)
+            resume();
+        return;
+}
+
+/*
+function goTo(page) {
+    var pageClass = "." + page;
+    var pageID = "#" + page;
+    
+    // Update active nav pointer
+    $('.active-nav').removeClass('active-nav');
+    $(pageClass).addClass('active-nav');
+        
+    // Fade out old page
+    $('.active').hide().removeClass('active');
+    $(pageID).addClass('active'); 
+    $(pageID).css('display', '');
+    
+    // Fade in new active page
+    $('.active').show();
+    
+    // Update background color
+    if (page === "home")
+        $('body').css('background-color','#f2f2f2');
+    else
+        $('body').css('background-color','white');
+    return;
+} */
+
 function home() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.home').addClass('active-nav');
+    $('.home-link').addClass('active-nav');
         
     // Fade out old page
     $('.active').hide().removeClass('active');
@@ -85,7 +131,7 @@ function home() {
 function portfolio() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.portfolio').addClass('active-nav');
+    $('.portfolio-link').addClass('active-nav');
         
     // Fade out old page
     $('.active').hide().removeClass('active');
@@ -103,7 +149,7 @@ function portfolio() {
 function resume() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.resume').addClass('active-nav');
+    $('.resume-link').addClass('active-nav');
         
     // Fade out old page
     $('.active').hide().removeClass('active');
@@ -118,6 +164,36 @@ function resume() {
     return;
 }
     
+function expandEntry(entry) {
+     // Get pics
+        var pic = $(entry).closest('table').find('img');
+        var expandedPic = $('#portfolio-expand img');
+        
+        // Get src and sync expanded photo
+        var picSrc = pic.attr('src');
+        expandedPic.attr('src', picSrc);
+        
+        // Center
+        offset(expandedPic, $('#portfolio-expand .e-img-container'));
+        
+        /* DESCRIPTION */
+        // Update title
+        var title = $(entry).closest('table').find('h2').text();
+        $('#portfolio-expand h2').replaceWith('<h2>'+title+'</h2>');
+        
+        // Update date
+        var date = $(entry).closest('table').find('.date').text();
+        $('#portfolio-expand .date').replaceWith('<p class="date">'+date+'</p>');
+        
+        // Update description
+        var description = $(entry).closest('table').find('.small').text();
+        $('#portfolio-expand .small').replaceWith('<p class="small">'+description+'</p>');
+        
+         // Fade in and out
+        $('#screen').css('display', '');
+        $('#screen').fadeIn(150);
+}
+
 var main = function () {
     var hash = location.hash;
   //  getPage(hash);
@@ -136,83 +212,28 @@ var main = function () {
     
     /* MENU CLICK */
     $('nav li').click(function () {
-        // Scroll to footer if contact is clicked on
-        if ($(this).hasClass('contact') === true) {
-            contact(); 
-            return;
-        }
-        // Return if active nav was clicked on
-        if ($(this).hasClass('active-nav') === true) {
-            return;
-        }
-        
-        // Update active page pointer
-        if ($(this).hasClass('home') === true) 
-            home();
-        else if ($(this).hasClass('portfolio') === true) 
-            portfolio();
-        else if ($(this).hasClass('resume') === true)
-            resume();
+        goTo(this);
         return;
     });
     
     /* HOME LINKS */
     $('.expand-resume').click(function () {
-        // Update active nav pointer
-        $('.active-nav').removeClass('active-nav');
-        $('.resume').addClass('active-nav');
-        
-        $('.active').hide().removeClass('active');
-        $('#resume').addClass('active');
-        $('#resume').css('display', '');
-        $('body').css('background-color','white');
-        $('.active').show();
+       resume();
         $('html,body').scrollTop(0);
+        return;
     });
     
     $('.expand-portfolio').click(function () {
-        // Update active nav pointer
-        $('.active-nav').removeClass('active-nav');
-        $('.portfolio').addClass('active-nav');
-        
-        $('.active').hide().removeClass('active');
-        $('#portfolio').addClass('active');
-        $('#portfolio').css('display', '');
-        $('body').css('background-color','white');
-        $('.active').show();
+       portfolio();
         $('html,body').scrollTop(0);
+        return;
     });
      
     /* PORTFOLIO EXPAND */
-    $('#portfolio .more').click(function () {
-        
-        // Get pics
-        var pic = $(this).closest('table').find('img');
-        var expandedPic = $('#portfolio-expand img');
-        
-        // Get src and sync expanded photo
-        var picSrc = pic.attr('src');
-        expandedPic.attr('src', picSrc);
-        
-        // Center
-        offset(expandedPic, $('#portfolio-expand .e-img-container'));
-        
-        /* DESCRIPTION */
-        // Update title
-        var title = $(this).closest('table').find('h2').text();
-        $('#portfolio-expand h2').replaceWith('<h2>'+title+'</h2>');
-        
-        // Update date
-        var date = $(this).closest('table').find('.date').text();
-        $('#portfolio-expand .date').replaceWith('<p class="date">'+date+'</p>');
-        
-        // Update description
-        var description = $(this).closest('table').find('.small').text();
-        $('#portfolio-expand .small').replaceWith('<p class="small">'+description+'</p>');
-        
-         // Fade in and out
-        $('#screen').css('display', '');
-        $('#screen').fadeIn(150);
+    $('#portfolio .expand').click(function () {
+        expandEntry(this);
+        return;
+       
     });
     
     /* PORTFOLIO CLOSE */
