@@ -4,24 +4,29 @@
 
 
 function getWidth(obj){
+    alert("Entering getWidth");
     var clone = obj.clone();
     clone.css("visibility","hidden");
     $('body').append(clone);
     var width = clone.outerWidth();
     clone.remove();
+      alert("Leaving getWidth");
     return width;
 }
 
 function getHeight(obj){
+      alert("Entering getHeight");
     var clone = obj.clone();
     clone.css("visibility","hidden");
     $('body').append(clone);
     var height = clone.outerHeight();
     clone.remove();
+      alert("Leaving getHeight");
     return height;
 }
 
 function offset(pic, container) {
+      alert("Entering offset");
     var width = getWidth(pic);
     var height = getHeight(pic);
     var cWidth = getWidth(container);
@@ -39,6 +44,7 @@ function offset(pic, container) {
         var offset = -(height - cHeight)/2;      
         pic.css('margin-top', offset);
     }
+      alert("Leaving offset");
 }
 
 function isIE() 
