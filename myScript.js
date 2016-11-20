@@ -212,6 +212,12 @@ var main = function () {
         offset($(this).find('img'), $('.img-container'));
     });
     
+    // Center in safari
+    $(window).on('load', function() {
+        $('#portfolio li').each(function () {
+        offset($(this).find('img'), $('.img-container'));
+    });
+    });
     // Resume circle animation
     $('.circle').hover(function () {
         $(this).effect('shake', {times:2, distance: 3}, 400 );
