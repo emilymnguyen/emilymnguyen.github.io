@@ -195,10 +195,16 @@ function expandEntry(entry) {
 }
 
 var main = function () {
-    var hash = location.hash;
-  //  getPage(hash);
-    
     $('body').css('background-color', '#f2f2f2');
+    
+    // Check hash to load correct page
+    var hash = location.hash;
+    if (hash === "#home")
+        home();
+    else if (hash === "#portfolio")
+        portfolio();
+    else if (hash === "#resume")
+        resume();
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
