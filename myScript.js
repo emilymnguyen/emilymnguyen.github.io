@@ -65,7 +65,19 @@ function contact() {
     return;
 }
 function home() {
+     // Update active nav pointer
+        $('.active-nav').removeClass('active-nav');
+        $('.home').addClass('active-nav');
+        
+        // Fade out old page
+        $('.active').hide().removeClass('active');
+   $('#home').addClass('active');  
     
+       // Fade in new active page
+        $('.active').show();
+    
+       $('body').css('background-color','#f2f2f2');
+    return;
 }
     
 var main = function () {
@@ -104,8 +116,10 @@ var main = function () {
         $('.active').hide().removeClass('active');
         
         // Update active page pointer
-        if ($(this).hasClass('home') === true)
-            $('#home').addClass('active');
+        if ($(this).hasClass('home') === true) {
+            home();
+            return;
+        }
         else if ($(this).hasClass('portfolio') === true) {
             $('#portfolio').addClass('active');
             $('#portfolio').css('display', '');
