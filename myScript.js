@@ -56,16 +56,6 @@ function isIE()
     
 }
 
-function contact() {
-    $('html, body').animate({ 
-            scrollTop: $(document).height()-$(window).height()-5}, 300).promise().then(function() {
-               
-                $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
-            }); 
-    return;
-}
-
-
 function navClick(link) {
      if ($(link).hasClass('contact-link') === true) {
             contact(); 
@@ -86,10 +76,14 @@ function navClick(link) {
         return;
 }
 
-
 function nav(page) {
-    var pageClass = "." + page + "-link";
-    var pageID = "#" + page;
+    if (page === "" || page != home || page!= portfolio || page != resume) {
+        page = home;
+    }
+    else {
+        var pageClass = "." + page + "-link";
+        var pageID = "#" + page;
+    }
     
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
@@ -163,6 +157,15 @@ function resume() {
     $('body').css('background-color','white');
     return;
 }
+
+function contact() {
+    $('html, body').animate({ 
+            scrollTop: $(document).height()-$(window).height()-5}, 300).promise().then(function() {
+               
+                $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
+            }); 
+    return;
+}
     
 function expandEntry(entry) {
      // Get pics
@@ -197,9 +200,12 @@ function expandEntry(entry) {
 var main = function () {
     $('body').css('background-color', '#f2f2f2');
     
+    /*
     // Check hash to load correct page
     var hash = window.location.hash.substr(1);
-    nav(hash);
+    if (hash.length != 0 && hash != "home") {
+        nav(hash);
+}*/
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
