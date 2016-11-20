@@ -4,29 +4,24 @@
 
 
 function getWidth(obj){
-    alert("Entering getWidth");
     var clone = obj.clone();
     clone.css("visibility","hidden");
     $('body').append(clone);
     var width = clone.outerWidth();
     clone.remove();
-      alert("Leaving getWidth");
     return width;
 }
 
 function getHeight(obj){
-      alert("Entering getHeight");
     var clone = obj.clone();
     clone.css("visibility","hidden");
     $('body').append(clone);
     var height = clone.outerHeight();
     clone.remove();
-      alert("Leaving getHeight");
     return height;
 }
 
 function offset(pic, container) {
-      alert("Entering offset");
     var width = getWidth(pic);
     var height = getHeight(pic);
     var cWidth = getWidth(container);
@@ -44,7 +39,6 @@ function offset(pic, container) {
         var offset = -(height - cHeight)/2;      
         pic.css('margin-top', offset);
     }
-      alert("Leaving offset");
 }
 
 function isIE() 
@@ -62,14 +56,23 @@ function isIE()
     
 }
 
-var main = function () {
-    // Set up
-  //  $('#portfolio-expand').hide();
-  //  $('#portfolio').hide();
-//    $('#resume').hide();
-  //  $('#contact').hide();
-    $('body').css('background-color', '#f2f2f2');
+function contact() {
+    $('html, body').animate({ 
+            scrollTop: $(document).height()-$(window).height()-5}, 300).promise().then(function() {
+               
+                $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
+            }); 
+    return;
+}
+function home() {
     
+}
+    
+var main = function () {
+    var hash = location.hash;
+  //  getPage(hash);
+    
+    $('body').css('background-color', '#f2f2f2');
     
     // Center each portfolio img
     $('#portfolio li').each(function () {
@@ -80,38 +83,12 @@ var main = function () {
     $('.circle').hover(function () {
         $(this).effect('shake', {times:2, distance: 3}, 400 );
     });
-   
-    /*
-    var htmlOrBody = 'html';
-    if($.browser.webkit)
-        htmlOrBody = '';
-        */
     
     /* MENU CLICK */
     $('nav li').click(function () {
         // Scroll to footer if contact is clicked on
         if ($(this).hasClass('contact') === true) {
-        
-            
-            $('html, body').animate({ 
-            scrollTop: $(document).height()-$(window).height()-5}, 300).promise().then(function() {
-               
-           //     $('.fb').animate({opacity: 0});
-          //      $('.fb').animate({opacity:1});
-                $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
-            }); 
-        
-            
-            /*
-            var container = $('html,body');
-            var scrollTo = $('#footer');
-            container.animate({
-                scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-            }).promise().done(function() {
-                 $('.icon').effect('shake', {times:1, distance: 7, direction: 'left'}, 200);
-            });
-            */
-            
+            contact(); 
             return;
         }
         // Return if active nav was clicked on
@@ -124,7 +101,6 @@ var main = function () {
         $(this).addClass('active-nav');
         
         // Fade out old page
-        //$('.active').fadeOut(300).removeClass('active');
         $('.active').hide().removeClass('active');
         
         // Update active page pointer
