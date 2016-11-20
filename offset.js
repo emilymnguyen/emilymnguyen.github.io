@@ -37,17 +37,10 @@ function offset(pic, container) {
 }
 
 var main = function () {
-    /*// Center each portfolio img
+    // Center each portfolio img
     $('#portfolio li').each(function () {
         offset($(this).find('img'), $('.img-container'));
-    });*/
-    jQuery(window).load(function () {
-        $('#portfolio li').each(function () {
-        offset($(this).find('img'), $('.img-container'));
     });
-    }
-    });
-
 };
 
 $(document).ready(main);
