@@ -1,8 +1,6 @@
 /*global $ */
 /*jslint node: true*/
 
-
-
 function getWidth(obj){
     var clone = obj.clone();
     clone.css("visibility","hidden");
@@ -185,7 +183,7 @@ function contact() {
     
 function expandEntry(entry) {
         // Get pics
-        var pic = $(entry).closest('table').find('img');
+        var pic = $(entry).closest('li').find('img');
         var expandedPic = $('#portfolio-expand img');
         
         // Get src and sync expanded photo
@@ -199,15 +197,15 @@ function expandEntry(entry) {
         
         /* DESCRIPTION */
         // Update title
-        var title = $(entry).closest('table').find('h2').text();
+        var title = $(entry).closest('li').find('h2').text();
         $('#portfolio-expand h2').replaceWith('<h2>'+title+'</h2>');
         
         // Update date
-        var date = $(entry).closest('table').find('.date').text();
+        var date = $(entry).closest('li').find('.date').text();
         $('#portfolio-expand .date').replaceWith('<p class="date">'+date+'</p>');
         
         // Update description
-        var description = $(entry).closest('table').find('.small').text();
+        var description = $(entry).closest('li').find('.small').text();
         $('#portfolio-expand .small').replaceWith('<p class="small">'+description+'</p>');
         
          // Fade in and out
@@ -276,6 +274,8 @@ var main = function () {
     $('.close').click(function () {
         $('#screen').fadeOut(150);
     });
+    
+    
      
 };
 

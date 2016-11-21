@@ -87,12 +87,12 @@ h2 {
     color: #28a57c;
 }
 
-.expand a {
+.expand {
     font-size: 8.5px;
     letter-spacing: 0.5px;
     font-family: Lato, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 700; 
 }
 
 /* -------------------------- RESUME -----------------------------*/
@@ -177,7 +177,7 @@ h2 {
     margin-top: 25px;
 }
 
-nav li:hover, .expand a, .close {
+nav li:hover, .expand, .close {
     cursor: pointer;
    /* cursor: hand;*/
 }
@@ -300,8 +300,8 @@ header {
 }
 
 #portfolio .content {
-    margin-bottom: -30px;
-    padding-top: 70px;
+    margin-bottom: -10px;
+    padding-top: 60px;
 }
 
 #portfolio ul {
@@ -311,29 +311,14 @@ header {
 
 #portfolio li {
     width: 274px;
-    height: 392px;
+    height: 378px;
     display: inline-block;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-#portfolio table {
-    height: 100%;
-}
-#portfolio tr {
-    padding: 0;
-}
-#portfolio tr:nth-child(odd) td {
-    height: 377px;
-    padding: 0;
-    
-}
-#portfolio tr:nth-child(even) td {
-    heiht: 10px;
-}
-#portfolio td {
-    padding: 0;
     vertical-align: top;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.entry {
+    height:100%;
 }
 
 #portfolio li:nth-child(3n+1) {
@@ -361,13 +346,6 @@ header {
     font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 19px;
-}
-#portfolio h2 {
-    margin: 10px 0px -5px 0px;
-}
-#portfolio p {
-    padding: 0;
-    margin-top: 13px;
 }
 
 .extra {
