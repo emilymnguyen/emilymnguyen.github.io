@@ -102,25 +102,6 @@ h3 {
     
 }
 
-/*
-.home-content tr:nth-child(1) td:nth-child(1) h1 {
-    color: #FAB231;
-    
-}
-.home-content tr:nth-child(1) td:nth-child(2) h1 {
-    color: #84CFD0;
-    
-}
-.home-content tr:nth-child(2) td:nth-child(1) h1 {
-    color: #EC4E5F;
-    
-}
-.home-content tr:nth-child(2) td:nth-child(2) h1 {
-    color: #FAB231;
-    
-}
-*/
-
 .expand a {
     font-size: 8.5px;
     letter-spacing: 0.5px;

@@ -27,7 +27,7 @@ function offset(pic, container) {
     var cWidth = getWidth(container);
     var cHeight = getHeight(container);
     
-    // 600 x 300
+    // image: 600 x 300
     // 600 x 100
     // 600/ratio=200 x 100
     // ratio = 3
@@ -179,7 +179,7 @@ function contact() {
 }
     
 function expandEntry(entry) {
-     // Get pics
+        // Get pics
         var pic = $(entry).closest('table').find('img');
         var expandedPic = $('#portfolio-expand img');
         
@@ -188,6 +188,8 @@ function expandEntry(entry) {
         expandedPic.attr('src', picSrc);
         
         // Center
+        offset(expandedPic, $('#portfolio-expand .e-img-container'));
+        offset(expandedPic, $('#portfolio-expand .e-img-container'));
         offset(expandedPic, $('#portfolio-expand .e-img-container'));
         
         /* DESCRIPTION */
@@ -221,11 +223,15 @@ var main = function () {
     // Center each portfolio img
     $('#portfolio li').each(function () {
         offset($(this).find('img'), $('.img-container'));
+        offset($(this).find('img'), $('.img-container'));
+        offset($(this).find('img'), $('.img-container'));
     });
     
     // Center in safari
     $(window).on('load', function() {
         $('#portfolio li').each(function () {
+        offset($(this).find('img'), $('.img-container'));
+        offset($(this).find('img'), $('.img-container'));
         offset($(this).find('img'), $('.img-container'));
     });
     });
