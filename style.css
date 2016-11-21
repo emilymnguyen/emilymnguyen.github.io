@@ -6,7 +6,7 @@ html, body {
 body {
     background-color: white;
     padding: 0;
-    font-family: Source Sans Pro, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 p {
@@ -20,12 +20,12 @@ h1 {
     font-size: 32px;
     text-transform: uppercase;
     font-weight:400;
-    letter-spacing: 2.5;
+    letter-spacing: 2.5px;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-family: Source Sans Pro, Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 22px;
     font-weight: 300;
     line-height: 30px;
@@ -34,19 +34,6 @@ h2 {
     letter-spacing: 0.4px;
     text-transform: none;
     color: #333333;
-}
-
-2 {
-    text-transform: uppercase;
-    font-weight:200;
-    letter-spacing: 1px;
-    margin-bottom:-5px;
-    margin-top:30px;
-    font-size:32px;
-}
-
-h3 {
-    
 }
 
 /* -------------------------- HOME -----------------------------*/
@@ -86,7 +73,6 @@ h3 {
     /* 450 - border-spacing */
     width: 410px;
     height: 400px;
-    borer: 1px solid #333333;
     background-color: white;
     padding: 35px;
     vertical-align: top;
@@ -99,7 +85,6 @@ h3 {
 
 .home-content h1 {
     color: #28a57c;
-    
 }
 
 .expand a {
@@ -119,8 +104,8 @@ h3 {
 #resume h1 {
     /* green */
     color: #28a57c;
-    /* blue */
-    clor: #84CFD0;
+    /* blue 
+    color: #84CFD0;*/
 }
 
 .circle {
@@ -151,7 +136,6 @@ h3 {
     width: 420px;
     font-weight: 300;
     margin-bottom: 18px;
-    text-transform: upercase;
     letter-spacing: 0.4px;
 }
 .skills td{
@@ -180,8 +164,8 @@ h3 {
     list-style: none;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: Source Sans Pro, sans-serif;
-    font-weight:400;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
     font-size: 12px;
 }
 
@@ -195,7 +179,7 @@ h3 {
 
 nav li:hover, .expand a, .close {
     cursor: pointer;
-    cursor: hand;
+   /* cursor: hand;*/
 }
 
 nav li:hover {
@@ -212,7 +196,7 @@ nav li {
    -khtml-user-select: none;
    -webkit-user-select: none;
    -ms-user-select: none;
-   user-select: none;
+  /* user-select: none; */
 }
 
 .active-nav {
@@ -254,7 +238,7 @@ header {
 }
 #footer table {
     margin:auto;
-    margin-top:5px;
+    margin-top:2px;
 }
 
 #footer img {
@@ -359,7 +343,7 @@ header {
 }
 
 .date {
-    font-family: Source Sans Pro, Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -369,7 +353,7 @@ header {
 }
 
 .small {
-    font-family: Source Sans Pro, Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 13px;
     color: #B4B4B5;
     font-weight: 300;
