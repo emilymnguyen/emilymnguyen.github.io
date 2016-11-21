@@ -33,19 +33,24 @@ function offset(pic, container) {
     // ratio = 3
     // container: 200 x 100
     if (width >= height) {
+        /*
         var ratio = height/cHeight;
-        pic.css('width', width/ratio)
+        pic.css('width', width/ratio) */
         
         pic.css('height', cHeight);
+        pic.css('width', 'auto');
+        
         width = getWidth(pic);
         var offset = -(width - cWidth)/2;      
         pic.css('margin-left', offset);
     }
     else {
+        /*
         var ratio = width/cWidth;
-        pic.css('height', height/ratio)
+        pic.css('height', height/ratio) */
         
         pic.css('width', cWidth);
+        pic.css('height', 'auto');
         height = getHeight(pic);
         var offset = -(height - cHeight)/2;      
         pic.css('margin-top', offset);
