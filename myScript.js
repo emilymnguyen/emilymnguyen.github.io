@@ -27,13 +27,24 @@ function offset(pic, container) {
     var cWidth = getWidth(container);
     var cHeight = getHeight(container);
     
+    // 600 x 300
+    // 600 x 100
+    // 600/ratio=200 x 100
+    // ratio = 3
+    // container: 200 x 100
     if (width >= height) {
+        var ratio = height/cHeight;
+        pic.css('width', width/ratio)
+        
         pic.css('height', cHeight);
         width = getWidth(pic);
         var offset = -(width - cWidth)/2;      
         pic.css('margin-left', offset);
     }
     else {
+        var ratio = width/cWidth;
+        pic.css('height', height/ratio)
+        
         pic.css('width', cWidth);
         height = getHeight(pic);
         var offset = -(height - cHeight)/2;      
@@ -218,6 +229,7 @@ var main = function () {
         offset($(this).find('img'), $('.img-container'));
     });
     });
+    
     // Resume circle animation
     $('.circle').hover(function () {
         $(this).effect('shake', {times:2, distance: 3}, 400 );
