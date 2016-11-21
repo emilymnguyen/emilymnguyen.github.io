@@ -300,8 +300,8 @@ header {
 }
 
 #portfolio .content {
-    margin-top: 100px;
     margin-bottom: -30px;
+    padding-top: 70px;
 }
 
 #portfolio ul {
@@ -315,23 +315,25 @@ header {
     display: inline-block;
     margin-bottom: 20px;
     margin-top: 20px;
-    
 }
 
 #portfolio table {
     height: 100%;
 }
-
+#portfolio tr {
+    padding: 0;
+}
+#portfolio tr:nth-child(odd) td {
+    height: 377px;
+    padding: 0;
+    
+}
+#portfolio tr:nth-child(even) td {
+    heiht: 10px;
+}
 #portfolio td {
     padding: 0;
     vertical-align: top;
-}
-
-#portfoio tr:nth-child(odd) {
-    height: 360px;
-}
-#portfolio tr:nth-child(even) {
-    height: 10px;
 }
 
 #portfolio li:nth-child(3n+1) {
@@ -359,6 +361,13 @@ header {
     font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 19px;
+}
+#portfolio h2 {
+    margin: 10px 0px -5px 0px;
+}
+#portfolio p {
+    padding: 0;
+    margin-top: 13px;
 }
 
 .extra {
