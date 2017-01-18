@@ -427,6 +427,9 @@ body,
     vertical-align: middle;
 }
 
+
+/***********************************/
+
 #overlay table {
     width: var(--width);
     margin: 0 auto;
@@ -445,6 +448,7 @@ body,
 #overlay td:nth-child(2) {
     vertical-align: top;
     padding-left: 20px;
+    overflow-y: scroll;
 }
 
 #overlay img {
@@ -457,6 +461,40 @@ body,
     width: var(--width-img);
     max-width: 100%;
 }
+
+
+/***********************************/
+
+#overlay .entry-container {
+    width: 85vw;
+    position: relative;
+    margin: auto;
+}
+
+#overlay .img-container {
+    display: inline-block;
+    width: calc(.66 * 85vw);
+}
+
+#overlay .desc-container {
+    padding-left: 20px;
+    vertical-align: top;
+    display: inline-block;
+    width: calc((.33 * 85vw) - 20px);
+}
+
+#overlay img {
+    width: 100%;
+    max-width: 100%;
+}
+
+#overlay video {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/***********************************/
 
 .close {
     top: 0;
