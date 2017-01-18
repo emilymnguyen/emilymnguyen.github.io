@@ -143,22 +143,34 @@ function contact() {
 }
 
 function resize(pic) {
-    var width = 700 * .66;
-    $(pic).css('width', width + 'px');
+    var width = getWidth(pic);
+    if (parseInt(width) < 274) {
+        alert(width);
+        $(pic).css('max-height', '');
+        $(pic).css('max-width', '274px');
+    }
     return;
 }
 
 function expandEntry(entry) {
-    // Reset overlay by hiding both img and video
+    // Reset overlay by hiding all content
     $('#overlay').find('video').css('display', "none");
     $('#overlay').find('img').css('display', "none");
-    // Check if video exists
+    $('#overlay').find('iframe').css('display', "none");
+    // Check if video/pdf exists
     var video = $(entry).closest('li').find('video');
+    var pdf = $(entry).closest('li').find('iframe');
+    /* ENTRIES WITH VIDEO DEMO */
     if ($(video).length > 0) {
-        /* ENTRIES WITH VIDEO DEMO */
         var vidSrc = $(video).find('source').attr('src');
         $('#overlay').find('video').attr('src', vidSrc);
         $('#overlay').find('video').css('display', "");
+    }
+    /* ENTRIES WITH PDF */
+    else if ($(pdf).length > 0) {
+        var pdfSrc = $(pdf).attr('src');
+        $('#overlay').find('iframe').attr('src', pdfSrc);
+        $('#overlay').find('iframe').css('display', "");
     }
     else {
         /* FOR ENTRIES WITHOUT VIDEO DEMO */
@@ -190,6 +202,7 @@ var main = function () {
     $('#portfolio li').each(function () {
         //offset($(this).find('img'), $('.img-container'));
         //  offset($(this).find('img'));
+        // resize($(this).find('img'));
     });
     // Center in safari
     $(window).on('load', function () {
@@ -223,11 +236,15 @@ var main = function () {
     /* PORTFOLIO EXPAND */
     $('#portfolio .expand').click(function () {
         expandEntry(this);
+        $('body').attr('scroll', 'no');
+        $('body').css('overflow', 'hidden');
         return;
     });
     /* PORTFOLIO CLOSE */
     $('.close').click(function () {
         $('#overlay').fadeOut(150);
+        $('body').attr('scroll', '');
+        $('body').css('overflow', '');
     });
 };
 $(document).ready(main);
