@@ -17,27 +17,7 @@ function getHeight(obj) {
     clone.remove();
     return height;
 }
-/*
-function offset(pic, container) {
-    var width = getWidth(pic);
-    var height = getHeight(pic);
-    var cWidth = getWidth(container);
-    var cHeight = getHeight(container);
-    if (width >= height) {
-        pic.css('max-height', cHeight);
-        //  pic.css('width', 'auto');
-        width = getWidth(pic);
-        var offset = -(width - cWidth) / 2;
-        pic.css('margin-left', offset);
-    }
-    else {
-        pic.css('max-width', cWidth);
-        //    pic.css('height', 'auto');
-        height = getHeight(pic);
-        var offset = -(height - cHeight) / 2;
-        pic.css('margin-top', offset);
-    }
-}*/
+
 function offset(pic) {
     // If horizontal or square img
     if ($(pic).css('width') >= $(pic).css('height')) {
@@ -169,28 +149,37 @@ function resize(pic) {
 }
 
 function expandEntry(entry) {
-    // Get pics
-    var pic = $(entry).closest('li').find('img');
-    var expandedPic = $('#overlay img');
-    // Get src and sync expanded photo
-    var picSrc = pic.attr('src');
-    expandedPic.attr('src', picSrc);
-    resize(expandedPic);
-    /*
-    // Center
-    offset(expandedPic, $('#portfolio-expand .e-img-container'));
-    offset(expandedPic, $('#portfolio-expand .e-img-container'));
-    offset(expandedPic, $('#portfolio-expand .e-img-container')); */
+    // Reset overlay by hiding both img and video
+    $('#overlay').find('video').css('display', "none");
+    $('#overlay').find('img').css('display', "none");
+    // Check if video exists
+    var video = $(entry).closest('li').find('video');
+    if ($(video).length > 0) {
+        /* ENTRIES WITH VIDEO DEMO */
+        var vidSrc = $(video).find('source').attr('src');
+        $('#overlay').find('video').attr('src', vidSrc);
+        $('#overlay').find('video').css('display', "");
+    }
+    else {
+        /* FOR ENTRIES WITHOUT VIDEO DEMO */
+        // Get pics
+        var pic = $(entry).closest('li').find('img');
+        var expandedPic = $('#overlay img');
+        // Get src and sync expanded photo
+        var picSrc = pic.attr('src');
+        expandedPic.attr('src', picSrc);
+        expandedPic.css('display', "");
+    }
     /* DESCRIPTION */
     // Update title
     var title = $(entry).closest('li').find('h2').text();
-    $('#portfolio-expand h2').replaceWith('<h2>' + title + '</h2>');
+    $('#overlay h2').replaceWith('<h2>' + title + '</h2>');
     // Update date
     var date = $(entry).closest('li').find('.date').text();
-    $('#portfolio-expand .date').replaceWith('<p class="date">' + date + '</p>');
+    $('#overlay .date').replaceWith('<p class="date">' + date + '</p>');
     // Update description
     var description = $(entry).closest('li').find('.small').text();
-    $('#portfolio-expand .small').replaceWith('<p class="small">' + description + '</p>');
+    $('#overlay .small').replaceWith('<p class="small">' + description + '</p>');
     // Fade in and out
     $('#overlay').css('display', '');
     $('#overlay').fadeIn(150);
