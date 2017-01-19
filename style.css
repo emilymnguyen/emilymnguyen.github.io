@@ -8,6 +8,8 @@ body {
     background-color: white;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    --side-margins: 90px;
+    --body-width: calc(100vw - 180px);
 }
 
 p {
@@ -41,17 +43,19 @@ h2 {
 /* -------------------------- HOME -----------------------------*/
 
 .banner {
-    background-color: white;
+    background-olor: #1CB5E8;
     width: 100vw;
-    height: 350px;
+    height: 250px;
     margin-top: 130px;
+    text-align: center;
 }
 
 .intro {
     font-size: 50px;
-    margin-top: 65px;
     line-height: 50px;
     font-weight: 600;
+    coor: white;
+    text-transform: uppercase;
 }
 
 .description {
@@ -60,6 +64,7 @@ h2 {
     margin-top: -40px;
     font-weight: 200;
     letter-spacing: 0.2px;
+    coor: white;
 }
 
 .home-content {
@@ -182,14 +187,24 @@ h2 {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 12px;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 #menu-container {
-    position: relative;
-    width: 634px;
-    left: 50%;
-    margin-left: -317px;
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 65px;
+    /* change to center */
+    text-align: right;
+    margin-left: calc(0px - var(--side-margins));
+    colr: #5c5c5c;
+}
+
+.name {
+    position: absolute;
+    left: 0;
+    float: left;
+    margin-left: var(--side-margins);
 }
 
 nav li:hover,
@@ -210,7 +225,7 @@ nav li {
     float: left;
     border: 1px solid #333333;
     padding: 15px 25px 15px 25px;
-    margin: 15px;
+    margin-left: 30px;
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -227,27 +242,19 @@ nav li {
     color: white;
 }
 
-heaader {
-    position: absolute;
-    top: 12px;
-    width: 634px;
-    margin-left: -317px;
-    left: 50%;
-}
-
 header {
     position: absolute;
     top: 0;
     width: 100%;
     height: 130px;
-    background-color: #f2f2f2;
+    backgound-color: #f2f2f2;
 }
 
 
 /* -------------------------- FOOTER -----------------------------*/
 
 #footer {
-    background-color: #f2f2f2;
+    backround-color: #f2f2f2;
 }
 
 #footer td,
@@ -305,7 +312,7 @@ body,
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -130px;
+    margin-bottom: -160px;
 }
 
 #footer,
@@ -318,12 +325,14 @@ body,
 
 #portfolio {
     display: none;
+    --entry-margins: 35px;
+    --entry-width: calc((var(--body-width) - 2 * var(--entry-margins)) / 3 - 3px);
 }
 
 #portfolio .img-container {
     position: relative;
-    width: 274px;
-    height: 200px;
+    width: var(--entry-width);
+    height: calc(var(--entry-width) / 1.37);
     overflow: hidden;
     box-shaow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
@@ -335,7 +344,7 @@ body,
     left: -9999px;
     right: -9999px;
     margin: auto;
-    max-height: 200px;
+    max-height: calc(var(--entry-width) / 1.37);
 }
 
 #portfolio video {
@@ -358,8 +367,10 @@ body,
 }
 
 #portfolio .content {
-    margin-bottom: -10px;
-    padding-top: 60px;
+    position: relative;
+    width: var(--body-width);
+    pading-top: 60px;
+    margin-left: calc(-50% + var(--side-margins));
 }
 
 #portfolio ul {
@@ -368,10 +379,10 @@ body,
 }
 
 #portfolio li {
-    width: 274px;
-    height: 378px;
+    width: var(--entry-width);
+    height: calc(var(--entry-width) / 0.75);
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: calc(var(--entry-width) / 6);
     margin-top: 30px;
 }
 
@@ -380,11 +391,11 @@ body,
 }
 
 #portfolio li:nth-child(3n+1) {
-    margin-right: 35px;
+    margin-right: var(--entry-margins);
 }
 
 #portfolio li:nth-child(3n+3) {
-    margin-left: 35px;
+    margin-left: var(--entry-margins);
 }
 
 .date {

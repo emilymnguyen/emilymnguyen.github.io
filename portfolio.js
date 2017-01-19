@@ -80,7 +80,7 @@ function nav(page) {
     // Fade in new active page
     $('.active').show();
     // Update background color
-    if (page === "home") $('body').css('background-color', '#f2f2f2');
+    if (page === "home") $('body').css('background-color', '#fff');
     else $('body').css('background-color', 'white');
     return;
 }
@@ -95,7 +95,7 @@ function home() {
     // Fade in new active page
     $('.active').show();
     // Update background color
-    $('body').css('background-color', '#f2f2f2');
+    $('body').css('background-color', '#fff');
     return;
 }
 
@@ -158,7 +158,7 @@ function resize(pic) {
     if (ratio < 1.37) {
         // Set max-width and reset max height
         $(pic).css('max-height', "999px");
-        $(pic).css('max-width', "274px");
+        $(pic).css('max-width', "var(--entry-width)");
         return;
     }
 }
@@ -241,7 +241,7 @@ function expandEntry(entry) {
     $('#overlay').fadeIn(150);
 }
 var main = function () {
-    $('body').css('background-color', '#f2f2f2');
+    $('body').css('background-color', '#fff');
     // Center each portfolio img
     $('#portfolio li').each(function () {
         //offset($(this).find('img'), $('.img-container'));
