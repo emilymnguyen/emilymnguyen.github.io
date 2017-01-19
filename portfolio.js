@@ -142,17 +142,55 @@ function contact() {
     return;
 }
 
-function resize(pic) {
+function getRatio(pic) {
     var width = getWidth(pic);
-    if (parseInt(width) < 274) {
-        alert(width);
-        $(pic).css('max-height', '');
-        $(pic).css('max-width', '274px');
+    var height = getHeight(pic);
+    return width / height;
+}
+
+function resize(pic) {
+    // 274/200 = 1.37
+    // x < 1.37 means too tall
+    var ratio = getRatio(pic);
+    // Return if img is correct ratio
+    if (ratio == 1.37) return;
+    // Resize if img is too tall
+    if (ratio < 1.37) {
+        // Set max-width and reset max height
+        $(pic).css('max-height', "999px");
+        $(pic).css('max-width', "274px");
+        return;
+    }
+}
+/*
+ * Switch between the default overlay classes and the classes for tall entries. 0: wide to tall; otherwise: tall to wide
+ */
+function wideToTall(num) {
+    // Replace default classes with tall classes
+    if (num == 0) {
+        $('#overlay .entry-container').removeClass('entry-container').addClass('tall-entry-container');
+        $('#overlay .img-container').removeClass('img-container').addClass('tall-img-container');
+        $('#overlay .desc-container').removeClass('desc-container').addClass('tall-desc-container');
+        $('#overlay img').addClass('tall-img');
+        $('#overlay video').addClass('tall-video');
+    }
+    // Revert back to default classes
+    else {
+        $('#overlay .tall-entry-container').removeClass('tall-entry-container').addClass('entry-container');
+        $('#overlay .tall-img-container').removeClass('tall-img-container').addClass('img-container');
+        $('#overlay .tall-desc-container').removeClass('tall-desc-container').addClass('desc-container');
+        // Reset img css
+        $('#overlay img').removeClass('tall-img');
+        $('#overlay video').removeClass('tall-video');
     }
     return;
 }
 
 function expandEntry(entry) {
+    // Revert tall classes back to default if necessary
+    if ($('.tall-entry-container').length != 0) {
+        wideToTall(1);
+    }
     // Reset overlay by hiding all content
     $('#overlay').find('video').css('display', "none");
     $('#overlay').find('img').css('display', "none");
@@ -172,14 +210,20 @@ function expandEntry(entry) {
         $('#overlay').find('iframe').attr('src', pdfSrc);
         $('#overlay').find('iframe').css('display', "");
     }
+    /* FOR ENTRIES WITHOUT VIDEO DEMO */
     else {
-        /* FOR ENTRIES WITHOUT VIDEO DEMO */
         // Get pics
         var pic = $(entry).closest('li').find('img');
         var expandedPic = $('#overlay img');
-        // Get src and sync expanded photo
+        // Copy and paste source
         var picSrc = pic.attr('src');
         expandedPic.attr('src', picSrc);
+        // Resize if img is too tall
+        if (getRatio(pic) < 1.37) {
+            // Replace classes with tall classes
+            wideToTall(0);
+        }
+        // Show
         expandedPic.css('display', "");
     }
     /* DESCRIPTION */
@@ -202,7 +246,7 @@ var main = function () {
     $('#portfolio li').each(function () {
         //offset($(this).find('img'), $('.img-container'));
         //  offset($(this).find('img'));
-        // resize($(this).find('img'));
+        resize($(this).find('img'));
     });
     // Center in safari
     $(window).on('load', function () {
@@ -233,8 +277,15 @@ var main = function () {
         $('html,body').scrollTop(0);
         return;
     });
-    /* PORTFOLIO EXPAND */
+    /* PORTFOLIO EXPAND: expand button */
     $('#portfolio .expand').click(function () {
+        expandEntry(this);
+        $('body').attr('scroll', 'no');
+        $('body').css('overflow', 'hidden');
+        return;
+    });
+    /* PORTFOLIO EXPAND: img click */
+    $('#portfolio img').click(function () {
         expandEntry(this);
         $('body').attr('scroll', 'no');
         $('body').css('overflow', 'hidden');
