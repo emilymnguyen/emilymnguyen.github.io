@@ -201,6 +201,8 @@ h2 {
 }
 
 .name {
+    padding-left: 15px;
+    padding-right: 15px;
     position: absolute;
     left: 0;
     float: left;
@@ -323,6 +325,15 @@ body,
 
 /* -------------------------- PORTFOLIO -----------------------------*/
 
+.bio h1 {
+    line-height: 15px;
+}
+
+.bio {
+    width: 100%;
+    font-weight: 200;
+}
+
 #portfolio {
     display: none;
     --entry-margins: 35px;
@@ -381,6 +392,7 @@ body,
 #portfolio li {
     width: var(--entry-width);
     height: calc(var(--entry-width) / 0.75);
+    min-height: 360px;
     display: inline-block;
     margin-bottom: calc(var(--entry-width) / 6);
     margin-top: 30px;
