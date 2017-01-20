@@ -11,7 +11,8 @@ body {
     --side-margins: 90px;
     --body-width: calc(100vw - 180px);
     --green: #28a57c;
-    --gray-1: #2E2E2E;
+    --blue: #84CFD0;
+    --gray-1: #3B3B3B;
     --gray-2: #5c5c5c;
     --gray-3: #B4B4B5;
     color: var(--gray-1);
@@ -26,16 +27,18 @@ p {
 }
 
 h1 {
+    font-family: 'Lato', 'Arial', sans-serif;
     font-size: 32px;
     text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: .0px;
+    font-weight: 00;
+    letter-spacing: 1px;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: var(--gray-1);
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 300;
     line-height: 30px;
     margin-top: 10px;
@@ -85,10 +88,12 @@ h2 {
 }
 
 .see-more {
+    font-family: 'Lato', 'Arial', sans-serif;
     color: var(--gray-1);
     text-transform: uppercase;
     font-weight: 700;
     padding: 10px;
+    letter-spacing: 0.5px;
 }
 
 #resume-preview p {
@@ -104,8 +109,6 @@ h2 {
 
 #resume h1 {
     color: var(--green);
-    /* blue 
-    color: #84CFD0;*/
     font-weight: 400;
     letter-spacing: 2px;
     margin-bottom: 0px;
@@ -398,8 +401,8 @@ body,
 
 #portfolio li {
     width: var(--entry-width);
-    height: calc(var(--entry-width) / 0.75);
-    min-height: 360px;
+    height: calc(var(--entry-width) / 0.86);
+    min-height: 364px;
     display: inline-block;
     margin-bottom: calc(var(--entry-width) / 6);
     margin-top: 30px;
@@ -410,7 +413,7 @@ body,
 }
 
 .expand {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.5px;
     font-family: 'Lato', 'Arial', sans-serif;
     text-transform: uppercase;
@@ -427,19 +430,19 @@ body,
 
 .date {
     font-family: 'Source Sans Pro', 'Arial', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 300;
     margin-bottom: -6px;
 }
 
 .small {
     font-family: 'Source Sans Pro', 'Arial', sans-serif;
-    font-size: 13px;
+    font-size: 13.2px;
     color: var(--gray-3);
     font-weight: 300;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     line-height: 19px;
 }
 
@@ -574,7 +577,7 @@ body,
     position: absolute;
     color: black;
     text-align: center;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.5px;
     font-family: Lato, Arial, sans-serif;
     text-transform: uppercase;
