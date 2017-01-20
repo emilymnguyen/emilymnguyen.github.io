@@ -229,8 +229,8 @@ function expandEntry(entry) {
     /* FOR ENTRIES WITH VISIT BUTTON */
     var visit = $(entry).closest('li').find('.visit a');
     if ($(visit).length > 0) {
-        var url = $(visit).attr('src');
-        $('#overlay .visit a').attr('src', url);
+        var url = $(visit).attr('href');
+        $('#overlay .visit a').attr('href', url);
         $('#overlay .visit').show();
     }
     else $('#overlay .visit').hide();

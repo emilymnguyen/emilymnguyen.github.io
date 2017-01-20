@@ -7,9 +7,12 @@ body {
 body {
     background-color: white;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
     --side-margins: 90px;
     --body-width: calc(100vw - 180px);
+    --green: #28a57c;
+    --gray-1: #2E2E2E;
+    color: var(--gray-1);
 }
 
 p {
@@ -22,13 +25,12 @@ p {
 h1 {
     font-size: 32px;
     text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2.5px;
+    font-weight: 600;
+    letter-spacing: .0px;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 22px;
     font-weight: 300;
     line-height: 30px;
@@ -36,7 +38,7 @@ h2 {
     margin-bottom: -3px;
     letter-spacing: 0.4px;
     text-transform: none;
-    color: #333333;
+    color: var(--gray-1);
 }
 
 
@@ -94,14 +96,10 @@ h2 {
     letter-spacing: 0.5px;
 }
 
-.home-content h1 {
-    color: #28a57c;
-}
-
 .expand {
     font-size: 9px;
     letter-spacing: 0.5px;
-    font-family: Lato, Arial, sans-serif;
+    font-family: 'Lato', 'Arial', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
 }
@@ -114,8 +112,7 @@ h2 {
 }
 
 #resume h1 {
-    /* green */
-    color: #28a57c;
+    color: var(--green);
     /* blue 
     color: #84CFD0;*/
 }
@@ -197,7 +194,7 @@ h2 {
     /* change to center */
     text-align: right;
     margin-left: calc(0px - var(--side-margins));
-    coor: #333333;
+    coor: var(--gray-1);
 }
 
 .name {
@@ -218,14 +215,15 @@ nav li:hover,
     /* cursor: hand;*/
 }
 
-nav li:hover, .visit a:hover {
+nav li:hover,
+.visit a:hover {
     color: white;
-    background-color: #333333;
+    background-color: var(--gray-1);
 }
 
 nav li {
     float: left;
-    border: 1px solid #333333;
+    border: 1px solid var(--gray-1);
     padding: 15px 25px 15px 25px;
     margin-left: 30px;
     -moz-user-select: -moz-none;
@@ -237,7 +235,7 @@ nav li {
 
 .active-nav {
     color: white;
-    background-color: #333333;
+    background-color: var(--gray-1);
 }
 
 .active-nav a {
@@ -261,10 +259,10 @@ header {
 
 #footer td,
 #footer a {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 200;
     text-align: center;
-    color: #333333;
+    color: var(--gray-1);
     letter-spacing: 0.4px;
     text-decoration: none;
 }
@@ -325,15 +323,18 @@ body,
 
 /* -------------------------- PORTFOLIO -----------------------------*/
 
-.bio h1 {
-    line-height: 15px;
-}
-
 .bio {
-    margin-top: -40px;
-    margin-bottom: 60px;
+    margin-top: -20px;
+    margin-bottom: 80px;
     width: 100%;
     font-weight: 200;
+}
+
+.bio h1 {
+    font-size: 45px;
+    margin-left: -2px;
+    line-height: 28px;
+    letter-spacing: 1px;
 }
 
 #portfolio {
@@ -440,9 +441,9 @@ body,
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 12px;
-    color: #333333;
+    color: var(--gray-1);
     text-decoration: none;
-    border: 1px solid #333333;
+    border: 1px solid var(--gray-1);
     padding: 15px 25px 15px 25px;
 }
 
@@ -450,7 +451,6 @@ body,
     display: none;
     margin-top: 50px;
 }
-
 
 
 /* -------------------------- PORTFOLIO EXPAND ----------------------*/
