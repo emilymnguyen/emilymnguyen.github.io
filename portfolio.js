@@ -283,10 +283,10 @@ var main = function () {
         return;
     });
     /* WORK PREVIEW LINKS */
-    $('#work-preview img:nth-child(1)').click(function () {
+    $('#work-preview li:nth-child(1)').click(function () {
         expandEntry($('#portfolio li:nth-child(1)'));
     });
-    $('#work-preview img:nth-child(2)').click(function () {
+    $('#work-preview li:nth-child(2)').click(function () {
         expandEntry($('#portfolio li:nth-child(2)'));
     });
     /* PORTFOLIO EXPAND: expand button */
