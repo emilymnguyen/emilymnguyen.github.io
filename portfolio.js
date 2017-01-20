@@ -226,6 +226,14 @@ function expandEntry(entry) {
         // Show
         expandedPic.css('display', "");
     }
+    /* FOR ENTRIES WITH VISIT BUTTON */
+    var visit = $(entry).closest('li').find('.visit a');
+    if ($(visit).length > 0) {
+        var url = $(visit).attr('src');
+        $('#overlay .visit a').attr('src', url);
+        $('#overlay .visit').show();
+    }
+    else $('#overlay .visit').hide();
     /* DESCRIPTION */
     // Update title
     var title = $(entry).closest('li').find('h2').text();

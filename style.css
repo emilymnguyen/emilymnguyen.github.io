@@ -197,7 +197,7 @@ h2 {
     /* change to center */
     text-align: right;
     margin-left: calc(0px - var(--side-margins));
-    colr: #5c5c5c;
+    coor: #333333;
 }
 
 .name {
@@ -218,7 +218,7 @@ nav li:hover,
     /* cursor: hand;*/
 }
 
-nav li:hover {
+nav li:hover, .visit a:hover {
     color: white;
     background-color: #333333;
 }
@@ -330,6 +330,8 @@ body,
 }
 
 .bio {
+    margin-top: -40px;
+    margin-bottom: 60px;
     width: 100%;
     font-weight: 200;
 }
@@ -432,6 +434,23 @@ body,
 .extra {
     display: none;
 }
+
+.visit a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #333333;
+    text-decoration: none;
+    border: 1px solid #333333;
+    padding: 15px 25px 15px 25px;
+}
+
+.visit {
+    display: none;
+    margin-top: 50px;
+}
+
 
 
 /* -------------------------- PORTFOLIO EXPAND ----------------------*/
