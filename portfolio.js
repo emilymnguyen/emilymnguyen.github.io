@@ -247,6 +247,9 @@ function expandEntry(entry) {
     // Fade in and out
     $('#overlay').css('display', '');
     $('#overlay').fadeIn(150);
+    // Disable scroll
+    $('body').attr('scroll', 'no');
+    $('body').css('overflow', 'hidden');
 }
 var main = function () {
     $('body').css('background-color', '#fff');
@@ -255,12 +258,6 @@ var main = function () {
         //offset($(this).find('img'), $('.img-container'));
         //  offset($(this).find('img'));
         resize($(this).find('img'));
-    });
-    // Center in safari
-    $(window).on('load', function () {
-        $('#portfolio li').each(function () {
-            //  offset($(this).find('img'), $('.img-container'));
-        });
     });
     // Resume circle animation
     $('.circle').hover(function () {
@@ -274,29 +271,32 @@ var main = function () {
         navClick(this);
         return;
     });
-    /* HOME LINKS */
-    $('.expand-resume').click(function () {
-        resume();
-        $('html,body').scrollTop(0);
-        return;
-    });
-    $('.expand-portfolio').click(function () {
+    /* HOME: SEE MORE LINKS */
+    $('.sm-work').click(function () {
         portfolio();
         $('html,body').scrollTop(0);
         return;
     });
+    $('.sm-resume').click(function () {
+        resume();
+        $('html,body').scrollTop(0);
+        return;
+    });
+    /* WORK PREVIEW LINKS */
+    $('#work-preview img:nth-child(1)').click(function () {
+        expandEntry($('#portfolio li:nth-child(1)'));
+    });
+    $('#work-preview img:nth-child(2)').click(function () {
+        expandEntry($('#portfolio li:nth-child(2)'));
+    });
     /* PORTFOLIO EXPAND: expand button */
     $('#portfolio .expand').click(function () {
         expandEntry(this);
-        $('body').attr('scroll', 'no');
-        $('body').css('overflow', 'hidden');
         return;
     });
     /* PORTFOLIO EXPAND: img click */
     $('#portfolio img').click(function () {
         expandEntry(this);
-        $('body').attr('scroll', 'no');
-        $('body').css('overflow', 'hidden');
         return;
     });
     /* PORTFOLIO CLOSE */

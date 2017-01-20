@@ -19,7 +19,8 @@ p {
     line-height: 22px;
     font-size: 15px;
     letter-spacing: 0.2px;
-    color: #5c5c5c;
+    font-weight: 200;
+    colr: #5c5c5c;
 }
 
 h1 {
@@ -73,6 +74,10 @@ h2 {
     max-height: calc(var(--body-width) / 2 - 17px);
 }
 
+#work-preview img:hover {
+    opacity: 0.8;
+}
+
 #work-preview li:nth-child(1) {
     margin-right: 30px;
 }
@@ -82,6 +87,10 @@ h2 {
     text-transform: uppercase;
     font-weight: 700;
     padding: 10px;
+}
+
+#resume-preview p {
+    margin-top: -20px;
 }
 
 
@@ -190,7 +199,8 @@ nav li:hover,
 .expand,
 .close,
 #portfolio img,
-.see-more span {
+.see-more span,
+#work-preview img {
     cursor: pointer;
     /* cursor: hand;*/
 }
@@ -262,7 +272,8 @@ a,
 nav li,
 body,
 .close,
-.see-more span {
+.see-more span,
+#work-preview img {
     -o-transition: .3s;
     -ms-transition: .3s;
     -moz-transition: .3s;
