@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="http://emnguyen.github.io/favicon.ico" />
     <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:700|Source+Sans+Pro:200,300,400,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:700|Source+Sans+Pro:200,300,400,700' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- portfolio.js -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -26,35 +26,6 @@
         <div id="header"></div>
         <!----------------------------- HOME ------------------------------->
         <div id="home" class="active">
-            <div class="banner"> </div>
-            <!------------------------ HOME CONTENT ------------------------->
-            <div class="content">
-                <table class="home-content">
-                    <tr>
-                        <td>
-                            <h1>Lorem Ipsum</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum lacus vitae efficitur euismod. Duis egestas, orci ut tincidunt imperdiet, tortor arcu suscipit purus, quis tempus augue libero sed nisi.</p>
-                        </td>
-                        <td>
-                            <h1>Lorem Ipsum</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum lacus vitae efficitur euismod. Duis egestas, orci ut tincidunt imperdiet, tortor arcu suscipit purus, quis tempus augue libero sed nisi.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h1>Lorem Ipsum</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum lacus vitae efficitur euismod. Duis egestas, orci ut tincidunt imperdiet, tortor arcu suscipit purus, quis tempus augue libero sed nisi.</p> <span class="expand">
-                            <a class="expand-resume">See more +</a></span> </td>
-                        <td>
-                            <h1>Lorem Ipsum</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum lacus vitae efficitur euismod. Duis egestas, orci ut tincidunt imperdiet, tortor arcu suscipit purus, quis tempus augue libero sed nisi.</p> <span class="expand">
-                            <a class="expand-portfolio">See more +</a></span> </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <!--------------------------- PORTFOLIO ---------------------------->
-        <div id="portfolio">
             <div class="content">
                 <div class="bio">
                     <h1>
@@ -66,7 +37,25 @@
                         <br>
                         <br>This portfolio is the collection of projects I've created to strengthen my budding skill set and explore my interest in design and development. </p>
                 </div>
-                <h1>Work</h1>
+                <div id='work-preview'>
+                    <h1>Work</h1>
+                    <ul>
+                        <li>
+                            <div class="img-container"> <img src="portfolio/bakery.png"> </div>
+                        </li>
+                        <li>
+                            <div class="img-container"><img src="portfolio/base-converter.png"></div>
+                        </li>
+                    </ul>
+                    <div style="text-align: center" class="see-more"><span>See more +</span></div>
+                </div>
+                <div id='resume-preview'>
+                    <h1>Experience</h1> </div>
+            </div>
+        </div>
+        <!--------------------------- WORK ---------------------------->
+        <div id="portfolio">
+            <div class="content">
                 <ul>
                     <li>
                         <div class="entry">

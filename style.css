@@ -27,7 +27,8 @@ h1 {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: .0px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -44,64 +45,43 @@ h2 {
 
 /* -------------------------- HOME -----------------------------*/
 
-.banner {
-    background-olor: #1CB5E8;
-    width: 100vw;
-    height: 250px;
-    margin-top: 130px;
-    text-align: center;
+#work-preview ul {
+    list-style: none;
+    padding: 0px;
 }
 
-.intro {
-    font-size: 50px;
-    line-height: 50px;
-    font-weight: 600;
-    coor: white;
-    text-transform: uppercase;
+#work-preview li {
+    display: inline-block;
+    width: calc(var(--body-width) / 2 - 17px);
+    height: calc(var(--body-width) / 2 - 17px);
 }
 
-.description {
-    font-size: 16px;
-    width: 360px;
-    margin-top: -40px;
-    font-weight: 200;
-    letter-spacing: 0.2px;
-    coor: white;
+#work-preview .img-container {
+    overflow: hidden;
+    width: calc(var(--body-width) / 2 - 17px);
+    height: calc(var(--body-width) / 2 - 17px);
+    position: relative;
 }
 
-.home-content {
-    /* Add 60 bc border spacing is 20 */
-    width: 920px;
-    border-spacing: 40px;
+#work-preview img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
     margin: auto;
-    /* Offset */
-    margin-left: -10px;
-    margin-bottom: -90px;
-    text-align: center;
-    margin-top: -205px;
+    max-height: calc(var(--body-width) / 2 - 17px);
 }
 
-.home-content td {
-    /* 450 - border-spacing */
-    width: 410px;
-    height: 320px;
-    background-color: white;
-    padding: 35px;
-    vertical-align: top;
+#work-preview li:nth-child(1) {
+    margin-right: 30px;
 }
 
-.home-content p {
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-.expand {
-    font-size: 9px;
-    letter-spacing: 0.5px;
-    font-family: 'Lato', 'Arial', sans-serif;
+.see-more {
+    color: var(--gray-1);
     text-transform: uppercase;
     font-weight: 700;
+    padding: 10px;
 }
 
 
@@ -115,6 +95,9 @@ h2 {
     color: var(--green);
     /* blue 
     color: #84CFD0;*/
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
 }
 
 .circle {
@@ -164,11 +147,8 @@ h2 {
 
 .content {
     position: relative;
-    width: 900px;
-    left: 50%;
-    margin-left: -450px;
-    margin-top: 130px;
-    padding: 80px 0px 80px 0px;
+    width: var(--body-width);
+    margin: 200px 0px 100px var(--side-margins);
 }
 
 
@@ -210,7 +190,7 @@ nav li:hover,
 .expand,
 .close,
 #portfolio img,
-#portfolio .shadow {
+.see-more span {
     cursor: pointer;
     /* cursor: hand;*/
 }
@@ -281,7 +261,8 @@ a,
 .expand p,
 nav li,
 body,
-.close {
+.close,
+.see-more span {
     -o-transition: .3s;
     -ms-transition: .3s;
     -moz-transition: .3s;
@@ -306,7 +287,8 @@ body,
 
 .media a:hover,
 .expand a:hover,
-.close:hover {
+.close:hover,
+.see-more span:hover {
     opacity: 0.1;
 }
 
@@ -324,7 +306,6 @@ body,
 /* -------------------------- PORTFOLIO -----------------------------*/
 
 .bio {
-    margin-top: -20px;
     margin-bottom: 80px;
     width: 100%;
     font-weight: 200;
@@ -335,6 +316,7 @@ body,
     margin-left: -2px;
     line-height: 28px;
     letter-spacing: 1px;
+    margin-bottom: 0px;
 }
 
 #portfolio {
@@ -380,13 +362,6 @@ body,
     z-index: 100;
 }
 
-#portfolio .content {
-    position: relative;
-    width: var(--body-width);
-    pading-top: 60px;
-    margin-left: calc(-50% + var(--side-margins));
-}
-
 #portfolio ul {
     padding: 0px;
     list-style: none;
@@ -403,6 +378,14 @@ body,
 
 .entry {
     height: 100%;
+}
+
+.expand {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 #portfolio li:nth-child(3n+1) {
