@@ -47,6 +47,10 @@ function isIE() {
 }
 
 function navClick(link) {
+    if ($(link).hasClass('logo') === true) {
+        location.reload();
+        return;
+    }
     if ($(link).hasClass('contact-link') === true) {
         contact();
         return;
@@ -252,6 +256,30 @@ function expandEntry(entry) {
     $('body').css('overflow', 'hidden');
 }
 var main = function () {
+    // alert(window.innerWidth);
+    $(window).resize(function () {
+        // Resize nav
+        if (window.innerWidth <= 860) {
+            $('#header li').each(function () {
+                $(this).addClass('s860');
+            });
+        }
+        else {
+            $('#header li').each(function () {
+                $(this).removeClass('s860');
+            });
+        }
+        if (window.innerWidth <= 730) {
+            $('#menu-container').each(function () {
+                $(this).addClass('s730');
+            });
+        }
+        else {
+            $('#menu-container').each(function () {
+                $(this).removeClass('s730');
+            });
+        }
+    });
     $('body').css('background-color', '#fff');
     // Center each portfolio img
     $('#portfolio li').each(function () {

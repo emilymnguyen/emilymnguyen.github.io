@@ -12,6 +12,8 @@ body {
     --body-width: calc(100vw - 180px);
     --green: #28a57c;
     --gray-1: #2E2E2E;
+    --gray-2: #5c5c5c;
+    --gray-3: #B4B4B5;
     color: var(--gray-1);
 }
 
@@ -19,8 +21,8 @@ p {
     line-height: 22px;
     font-size: 15px;
     letter-spacing: 0.2px;
-    font-weight: 200;
-    colr: #5c5c5c;
+    font-weight: 300;
+    color: var(--gray-2);
 }
 
 h1 {
@@ -147,10 +149,6 @@ h2 {
     padding-bottom: 4px;
 }
 
-#resume .small {
-    font-size: 13px;
-}
-
 
 /* -------------------------- CONTENT -----------------------------*/
 
@@ -186,7 +184,7 @@ h2 {
     coor: var(--gray-1);
 }
 
-.name {
+.logo {
     padding-left: 15px;
     padding-right: 15px;
     position: absolute;
@@ -223,6 +221,27 @@ nav li {
     /* user-select: none; */
 }
 
+.s860 {
+    padding: 12px 17px 12px 17px;
+    font-size: 11px;
+    margin: 7px 0px 0px 20px;
+}
+
+.s860:nth-child(1) {
+    padding: 12px;
+    margin-left: var(--side-margins);
+}
+
+.s730 li:nth-child(1) {
+    boder: none;
+    dislay: none;
+}
+
+.s730 {
+    tex-align: center;
+    margn-left: 0px;
+}
+
 .active-nav {
     color: white;
     background-color: var(--gray-1);
@@ -249,8 +268,8 @@ header {
 
 #footer td,
 #footer a {
-    font-size: 14px;
-    font-weight: 200;
+    font-size: 12px;
+    font-weight: 400;
     text-align: center;
     color: var(--gray-1);
     letter-spacing: 0.4px;
@@ -332,7 +351,7 @@ body,
 
 #portfolio {
     display: none;
-    --entry-margins: 35px;
+    --entry-margins: 20px;
     --entry-width: calc((var(--body-width) - 2 * var(--entry-margins)) / 3 - 3px);
 }
 
@@ -341,7 +360,6 @@ body,
     width: var(--entry-width);
     height: calc(var(--entry-width) / 1.37);
     overflow: hidden;
-    box-shaow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 #portfolio img {
@@ -412,7 +430,6 @@ body,
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #6E6E70;
     font-weight: 200;
     margin-bottom: -6px;
 }
@@ -420,7 +437,7 @@ body,
 .small {
     font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 13px;
-    color: #B4B4B5;
+    color: var(--gray-3);
     font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 19px;
