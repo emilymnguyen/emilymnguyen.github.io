@@ -227,13 +227,15 @@ h2 {
 .logo:nth-child(2) {
     padding-left: 0;
     font-family: 'Lato';
+    font-weight: 400;
     marin-left: 140px;
     border: none;
-    font-size: 20px;
+    font-size: 27px;
     margin-top: -3px;
     text-align: left;
     line-height: 8px;
     dispay: none;
+    coor: var(--green);
 }
 
 .logo:nth-child(3) {
@@ -258,8 +260,8 @@ h2 {
     display: none;
 }
 
-.logo .date {
-    font-size: 11px;
+.logo:nth-child(2) .date {
+    fnt-size: 11px;
 }
 
 .logo:nth-child(2):hover {
@@ -409,6 +411,8 @@ body,
 
 /* -------------------------- WORK -----------------------------*/
 
+
+/*
 #work {
     --entry-margins: 10px;
     --entry-width: calc((var(--body-width) - 2 * var(--entry-margins)) / 3 - 3px);
@@ -528,6 +532,124 @@ body,
 .visit {
     display: none;
     margin-top: 50px;
+}
+
+*/
+
+#work {
+    --entry-margins: 10px;
+    --entry-width: calc((var(--body-width) - 2 * var(--entry-margins)) / 3 - 3px);
+}
+
+#work .img-container {
+    position: relative;
+    width: var(--entry-width);
+    height: calc(var(--entry-width) / 1.37);
+    overflow: hidden;
+}
+
+#work img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    max-height: calc(var(--entry-width) / 1.37);
+}
+
+#work video {
+    display: none;
+}
+
+#work iframe {
+    display: none;
+}
+
+#work ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.s724 li {
+    with: calc(var(--body-width)/2 - 10px);
+    width: 800px;
+    height: calc(var(--entry-width) / 0.86);
+    min-height: 364px;
+    backgrond-color: red;
+}
+
+#work li {
+    width: var(--entry-width);
+    height: calc(var(--entry-width) / 1.37);
+    display: inline-block;
+    margin-bottom: var(--entry-margins);
+    margin-top: calc(var(--entry-margins) - 6px);
+}
+
+.entry {
+    height: 100%;
+}
+
+.expand {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#work li:nth-child(3n+1) {
+    margin-right: var(--entry-margins);
+}
+
+#work li:nth-child(3n+3) {
+    margin-left: var(--entry-margins);
+}
+
+.date {
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: -6px;
+}
+
+.small {
+    font-family: 'Source Sans Pro', 'Arial', sans-serif;
+    font-size: 13.2px;
+    color: var(--gray-3);
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+}
+
+.extra {
+    display: none;
+}
+
+.visit a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--gray-1);
+    text-decoration: none;
+    border: 1px solid var(--gray-1);
+    padding: 15px 25px 15px 25px;
+}
+
+.visit {
+    display: none;
+    margin-top: 50px;
+}
+
+#work .small,
+#work .date,
+#work .expand,
+#work h2 {
+    display: none;
 }
 
 
