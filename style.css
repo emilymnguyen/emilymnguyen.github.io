@@ -19,21 +19,22 @@ body {
 }
 
 p {
-    line-height: 22px;
-    font-size: 15px;
-    letter-spacing: 0.2px;
+    line-height: 26px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
     font-weight: 300;
     color: var(--gray-2);
 }
 
 h1 {
     font-family: 'Lato', 'Arial', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
+    fon-size: 32px;
     text-transform: uppercase;
-    font-weight: 00;
-    letter-spacing: 1px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: var(--gray-1);
 }
 
@@ -91,7 +92,7 @@ h2 {
     font-family: 'Lato', 'Arial', sans-serif;
     color: var(--gray-1);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
     padding: 10px;
     letter-spacing: 0.5px;
 }
@@ -348,7 +349,7 @@ body,
     font-size: 45px;
     margin-left: -2px;
     line-height: 28px;
-    letter-spacing: 1px;
+    letter-pacing: 1px;
     margin-bottom: 0px;
 }
 
@@ -399,6 +400,14 @@ body,
     list-style: none;
 }
 
+.s724 li {
+    with: calc(var(--body-width)/2 - 10px);
+    width: 800px;
+    height: calc(var(--entry-width) / 0.86);
+    min-height: 364px;
+    backgrond-color:red;
+}
+
 #portfolio li {
     width: var(--entry-width);
     height: calc(var(--entry-width) / 0.86);
@@ -431,7 +440,7 @@ body,
 .date {
     font-family: 'Source Sans Pro', 'Arial', sans-serif;
     font-size: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 300;
     margin-bottom: -6px;

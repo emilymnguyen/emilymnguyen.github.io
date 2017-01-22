@@ -256,7 +256,7 @@ function expandEntry(entry) {
     $('body').css('overflow', 'hidden');
 }
 var main = function () {
-    // alert(window.innerWidth);
+    //alert(window.innerWidth);
     $(window).resize(function () {
         // Resize nav
         if (window.innerWidth <= 860) {
@@ -277,6 +277,17 @@ var main = function () {
         else {
             $('#menu-container').each(function () {
                 $(this).removeClass('s730');
+            });
+        }
+        // Resize work
+        if (window.innerWidth <= 724) {
+            $('#portfolio').each(function () {
+                $(this).addClass('s724');
+            });
+        }
+        else {
+            $('#portfolio').each(function () {
+                $(this).removeClass('s724');
             });
         }
     });
