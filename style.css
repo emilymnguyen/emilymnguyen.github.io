@@ -32,7 +32,7 @@ h1 {
     fon-size: 32px;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-top: 30px;
     margin-bottom: 30px;
     color: var(--gray-1);
@@ -50,7 +50,30 @@ h2 {
 }
 
 
-/* -------------------------- HOME -----------------------------*/
+/* -------------------------- ABOUT -----------------------------*/
+
+#about {
+    display: none;
+}
+
+.bio {
+    margin-bottom: 80px;
+    width: 100%;
+    font-weight: 200;
+}
+
+.bio h1 {
+    font-size: 45px;
+    margin-left: -2px;
+    line-height: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 0px;
+}
+
+#work-preview {
+    --work-preview-margins: 10px;
+    --work-preview-width: calc(var(--body-width) / 2 - (var(--work-preview-margins) - 3px));
+}
 
 #work-preview ul {
     list-style: none;
@@ -59,14 +82,14 @@ h2 {
 
 #work-preview li {
     display: inline-block;
-    width: calc(var(--body-width) / 2 - 17px);
-    height: calc(var(--body-width) / 2 - 17px);
+    width: var(--work-preview-width);
+    height: var(--work-preview-width);
 }
 
 #work-preview .img-container {
     overflow: hidden;
-    width: calc(var(--body-width) / 2 - 17px);
-    height: calc(var(--body-width) / 2 - 17px);
+    width: var(--work-preview-width);
+    height: var(--work-preview-width);
     position: relative;
 }
 
@@ -77,7 +100,7 @@ h2 {
     left: -9999px;
     right: -9999px;
     margin: auto;
-    max-height: calc(var(--body-width) / 2 - 17px);
+    max-height: var(--work-preview-width);
 }
 
 #work-preview img:hover {
@@ -85,7 +108,7 @@ h2 {
 }
 
 #work-preview li:nth-child(1) {
-    margin-right: 30px;
+    margin-right: var(--work-preview-margins);
 }
 
 .see-more {
@@ -197,10 +220,57 @@ h2 {
     margin-left: var(--side-margins);
 }
 
+.logo:nth-child(1) {
+    display: none;
+}
+
+.logo:nth-child(2) {
+    padding-left: 0;
+    font-family: 'Lato';
+    marin-left: 140px;
+    border: none;
+    font-size: 20px;
+    margin-top: -3px;
+    text-align: left;
+    line-height: 8px;
+    dispay: none;
+}
+
+.logo:nth-child(3) {
+    font-family: 'Lato';
+    margin-left: 220px;
+    border: none;
+    fot-size: 12px;
+    margin-top: -12px;
+    text-align: left;
+    line-height: 13px;
+    display: none;
+}
+
+.logo:nth-child(4) {
+    font-family: 'Lato';
+    margn-left: 220px;
+    border: none;
+    font-size: 16px;
+    margin-top: -12px;
+    text-align: left;
+    line-height: 15px;
+    display: none;
+}
+
+.logo .date {
+    font-size: 11px;
+}
+
+.logo:nth-child(2):hover {
+    color: var(--gray-1);
+    background-color: rgba(0, 0, 0, 0);
+}
+
 nav li:hover,
 .expand,
 .close,
-#portfolio img,
+#work img,
 .see-more span,
 #work-preview img {
     cursor: pointer;
@@ -260,7 +330,7 @@ header {
     top: 0;
     width: 100%;
     height: 130px;
-    backgound-color: #f2f2f2;
+    backgrond-color: #f2f2f2;
 }
 
 
@@ -337,36 +407,21 @@ body,
 }
 
 
-/* -------------------------- PORTFOLIO -----------------------------*/
+/* -------------------------- WORK -----------------------------*/
 
-.bio {
-    margin-bottom: 80px;
-    width: 100%;
-    font-weight: 200;
-}
-
-.bio h1 {
-    font-size: 45px;
-    margin-left: -2px;
-    line-height: 28px;
-    letter-pacing: 1px;
-    margin-bottom: 0px;
-}
-
-#portfolio {
-    display: none;
-    --entry-margins: 20px;
+#work {
+    --entry-margins: 10px;
     --entry-width: calc((var(--body-width) - 2 * var(--entry-margins)) / 3 - 3px);
 }
 
-#portfolio .img-container {
+#work .img-container {
     position: relative;
     width: var(--entry-width);
     height: calc(var(--entry-width) / 1.37);
     overflow: hidden;
 }
 
-#portfolio img {
+#work img {
     position: absolute;
     top: -9999px;
     bottom: -9999px;
@@ -376,11 +431,11 @@ body,
     max-height: calc(var(--entry-width) / 1.37);
 }
 
-#portfolio video {
+#work video {
     display: none;
 }
 
-#portfolio iframe {
+#work iframe {
     display: none;
 }
 
@@ -395,7 +450,7 @@ body,
     z-index: 100;
 }
 
-#portfolio ul {
+#work ul {
     padding: 0px;
     list-style: none;
 }
@@ -405,10 +460,10 @@ body,
     width: 800px;
     height: calc(var(--entry-width) / 0.86);
     min-height: 364px;
-    backgrond-color:red;
+    backgrond-color: red;
 }
 
-#portfolio li {
+#work li {
     width: var(--entry-width);
     height: calc(var(--entry-width) / 0.86);
     min-height: 364px;
@@ -429,11 +484,11 @@ body,
     font-weight: 700;
 }
 
-#portfolio li:nth-child(3n+1) {
+#work li:nth-child(3n+1) {
     margin-right: var(--entry-margins);
 }
 
-#portfolio li:nth-child(3n+3) {
+#work li:nth-child(3n+3) {
     margin-left: var(--entry-margins);
 }
 

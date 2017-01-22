@@ -60,15 +60,15 @@ function navClick(link) {
         return;
     }
     // Update active page
-    if ($(link).hasClass('home-link') === true) home();
-    else if ($(link).hasClass('portfolio-link') === true) portfolio();
+    if ($(link).hasClass('about-link') === true) about();
+    else if ($(link).hasClass('work-link') === true) work();
     else if ($(link).hasClass('resume-link') === true) resume();
     return;
 }
 
 function nav(page) {
-    if (page === "" || page != home || page != portfolio || page != resume) {
-        page = home;
+    if (page === "" || page != about || page != work || page != resume) {
+        page = about;
     }
     else {
         var pageClass = "." + page + "-link";
@@ -84,18 +84,18 @@ function nav(page) {
     // Fade in new active page
     $('.active').show();
     // Update background color
-    if (page === "home") $('body').css('background-color', '#fff');
+    if (page === "about") $('body').css('background-color', '#fff');
     else $('body').css('background-color', 'white');
     return;
 }
 
-function home() {
+function about() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.home-link').addClass('active-nav');
+    $('.about-link').addClass('active-nav');
     // Fade out old page
     $('.active').hide().removeClass('active');
-    $('#home').addClass('active');
+    $('#about').addClass('active');
     // Fade in new active page
     $('.active').show();
     // Update background color
@@ -103,14 +103,14 @@ function home() {
     return;
 }
 
-function portfolio() {
+function work() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.portfolio-link').addClass('active-nav');
+    $('.work-link').addClass('active-nav');
     // Fade out old page
     $('.active').hide().removeClass('active');
-    $('#portfolio').addClass('active');
-    $('#portfolio').css('display', '');
+    $('#work').addClass('active');
+    $('#work').css('display', '');
     // Fade in new active page
     $('.active').show();
     // Update background color
@@ -281,19 +281,19 @@ var main = function () {
         }
         // Resize work
         if (window.innerWidth <= 724) {
-            $('#portfolio').each(function () {
+            $('#work').each(function () {
                 $(this).addClass('s724');
             });
         }
         else {
-            $('#portfolio').each(function () {
+            $('#work').each(function () {
                 $(this).removeClass('s724');
             });
         }
     });
-    $('body').css('background-color', '#fff');
-    // Center each portfolio img
-    $('#portfolio li').each(function () {
+    // $('body').css('background-color', '#fff');
+    // Center each gallery img
+    $('#work li').each(function () {
         //offset($(this).find('img'), $('.img-container'));
         //  offset($(this).find('img'));
         resize($(this).find('img'));
@@ -312,7 +312,7 @@ var main = function () {
     });
     /* HOME: SEE MORE LINKS */
     $('.sm-work').click(function () {
-        portfolio();
+        work();
         $('html,body').scrollTop(0);
         return;
     });
@@ -323,22 +323,22 @@ var main = function () {
     });
     /* WORK PREVIEW LINKS */
     $('#work-preview li:nth-child(1)').click(function () {
-        expandEntry($('#portfolio li:nth-child(1)'));
+        expandEntry($('#work li:nth-child(1)'));
     });
     $('#work-preview li:nth-child(2)').click(function () {
-        expandEntry($('#portfolio li:nth-child(2)'));
+        expandEntry($('#work li:nth-child(2)'));
     });
-    /* PORTFOLIO EXPAND: expand button */
-    $('#portfolio .expand').click(function () {
+    /* work EXPAND: expand button */
+    $('#work .expand').click(function () {
         expandEntry(this);
         return;
     });
-    /* PORTFOLIO EXPAND: img click */
-    $('#portfolio img').click(function () {
+    /* work EXPAND: img click */
+    $('#work img').click(function () {
         expandEntry(this);
         return;
     });
-    /* PORTFOLIO CLOSE */
+    /* work CLOSE */
     $('.close').click(function () {
         $('#overlay').fadeOut(150);
         $('body').attr('scroll', '');
