@@ -246,8 +246,8 @@ function expandEntry(entry) {
     var date = $(entry).closest('li').find('.date').text();
     $('#overlay .date').replaceWith('<p class="date">' + date + '</p>');
     // Update description
-    var description = $(entry).closest('li').find('.small').text();
-    $('#overlay .small').replaceWith('<p class="small">' + description + '</p>');
+    var description = $(entry).closest('li').find('.small-p').text();
+    $('#overlay .small-p').replaceWith('<p class="small-p">' + description + '</p>');
     // Fade in and out
     $('#overlay').css('display', '');
     $('#overlay').fadeIn(150);
@@ -259,26 +259,34 @@ var main = function () {
     //alert(window.innerWidth);
     $(window).resize(function () {
         // Resize nav
-        if (window.innerWidth <= 860) {
-            $('#header li').each(function () {
-                $(this).addClass('s860');
+        if (window.innerWidth <= 1035) {
+            $('#header ul').each(function () {
+                $(this).addClass('small');
             });
         }
         else {
-            $('#header li').each(function () {
-                $(this).removeClass('s860');
+            $('#header ul').each(function () {
+                $(this).removeClass('small');
             });
         }
+        // Resize nav
+        if (window.innerWidth <= 884) {
+            $('.logo:nth-child(2)').hide();
+        }
+        else {
+            $('.logo:nth-child(2)').show();
+        }
+        /*
         if (window.innerWidth <= 730) {
             $('#menu-container').each(function () {
-                $(this).addClass('s730');
+                $(this).addClass('small');
             });
         }
         else {
             $('#menu-container').each(function () {
-                $(this).removeClass('s730');
+                $(this).removeClass('small');
             });
-        }
+        }*/
         // Resize work
         if (window.innerWidth <= 724) {
             $('#work').each(function () {
@@ -288,6 +296,17 @@ var main = function () {
         else {
             $('#work').each(function () {
                 $(this).removeClass('s724');
+            });
+        }
+        // Resize resume preview boxes
+        if (window.innerWidth <= 1000) {
+            $('#resume-preview li').each(function () {
+                $(this).addClass('small');
+            });
+        }
+        else {
+            $('#resume-preview li').each(function () {
+                $(this).removeClass('small');
             });
         }
     });
