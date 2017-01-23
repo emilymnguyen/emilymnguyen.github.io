@@ -276,17 +276,6 @@ var main = function () {
         else {
             $('.logo:nth-child(2)').show();
         }
-        /*
-        if (window.innerWidth <= 730) {
-            $('#menu-container').each(function () {
-                $(this).addClass('small');
-            });
-        }
-        else {
-            $('#menu-container').each(function () {
-                $(this).removeClass('small');
-            });
-        }*/
         // Resize work
         if (window.innerWidth <= 724) {
             $('#work').each(function () {
@@ -308,6 +297,48 @@ var main = function () {
             $('#resume-preview li').each(function () {
                 $(this).removeClass('small');
             });
+        }
+        if (window.innerWidth <= 817) {
+            $('#resume-preview li').each(function () {
+                $(this).addClass('smaller');
+            });
+        }
+        else {
+            $('#resume-preview li').each(function () {
+                $(this).removeClass('smaller');
+            });
+        }
+        // Resize work preview
+        if (window.innerWidth <= 488) {
+            $('#work-preview li').each(function () {
+                $(this).addClass('small');
+                $('#work-preview').css('text-align', "center");
+            });
+        }
+        else {
+            $('#work-preview li').each(function () {
+                $(this).removeClass('small');
+                $('#work-previw').css('text-align', "left");
+            });
+        }
+        // Resize bio and nav
+        if (window.innerWidth <= 674) {
+            $('#bio .container').each(function () {
+                $(this).addClass('small');
+            });
+            $('#header ul').each(function () {
+                $(this).addClass('smaller');
+            });
+            $('.content').css('margin-top', '155px');
+        }
+        else {
+            $('#bio .container').each(function () {
+                $(this).removeClass('small');
+            });
+            $('#header ul').each(function () {
+                $(this).removeClass('smaller');
+            });
+            $('.content').css('margin-top', '200px');
         }
     });
     // $('body').css('background-color', '#fff');
