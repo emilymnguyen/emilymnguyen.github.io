@@ -9,7 +9,7 @@ body {
     padding: 0;
     font-family: 'Source Sans Pro', 'Arial', sans-serif;
     --side-margins: 90px;
-    --body-width: calc(100vw - 180px);
+    --body-width: calc(100vw - 2 * var(--side-margins));
     --green: #28a57c;
     --blue: #5BC0EB;
     --gray-1: #424242;
@@ -92,8 +92,20 @@ h2 {
     line-height: 44px;
 }
 
+#bio .small h1 {
+    font-size: 32px;
+    line-height: 32px;
+}
+
 #bio p {
     padding-bottom: 70px;
+}
+
+#bio .small p {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.6px;
+    padding-bottom: 60px;
 }
 
 #bio img {
@@ -126,6 +138,7 @@ h2 {
 }
 
 #work-preview {
+    text-align: center;
     margin-top: -20px;
     --work-preview-margins: 10px;
     --work-preview-width: calc(var(--body-width) / 2 - (var(--work-preview-margins) - 3px));
@@ -196,8 +209,6 @@ h2 {
 #resume-preview {
     width: 100vw;
     margin-left: calc(0px - var(--side-margins));
-    background-color: #F5F4F2;
-    backgrund-color: #F2F4F5;
     background-color: var(--blue-gray);
     margin-bottom: -20px;
     --res-box-margin: 2.8vw;
@@ -205,32 +216,52 @@ h2 {
     padding-top: 60px;
 }
 
+#resume-preview img {
+    max-width: calc(var(--res-box-width) /4);
+    margin: 0px;
+}
+
+#resume-preview .smaller img {
+    max-width: calc(var(--res-box-width) /5);
+}
+
 
 /* */
 
 #resume-preview .container {
-    padding-top: calc((var(--res-box-width) - 276px) / 2.5);
-    width: 216px;
+    padding-top: calc((var(--res-box-width) - (215px)) / 2.0);
+    width: calc(100% - 50px);
     margin: auto;
-    pading: 32px;
 }
 
 #resume-preview .small .container {
-    width: 150px;
-    width: calc(var(--res-box-width) - 80px);
-    padding-top: calc((var(--res-box-width) - 200px) / 2.5);
+    width: calc(100% - 40px);
+    padding-top: calc((var(--res-box-width) - (165px)) / 2.3);
+}
+
+#resume-preview .smaller .container {
+    with: calc(100% - 40px);
+    padding-top: calc((var(--res-box-width) - (120px)) / 2.7);
 }
 
 #resume-preview p {
-    padding-top: 32px;
-    padding-bottom: 0px;
-    font-size: 18px;
+    padding-top: 10px;
+    margin-top: 0px;
+    line-height: 20px;
+    font-size: 16px;
 }
 
 #resume-preview .small p {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 19px;
     margin-bottom: 6px;
+}
+
+#resume-preview .smaller p {
+    padding-top: 2px;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 2px;
 }
 
 #resume-preview .date {
@@ -241,16 +272,21 @@ h2 {
 }
 
 #resume-preview h1 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     --res-h1-margin: calc(var(--res-box-margin) * 1.3);
-    margin: var(--res-h1-margin) 0px -30px 0px;
+    magin: var(--rs-h1-margin) 0px -30px 0px;
+    margin: 0px;
+    pading-top: var(--res-h1-margin);
+    padding-bottom: 10px;
 }
 
 #resume-preview .small h1 {
     font-size: 18px;
-    --res-h1-margin: calc(var(--res-box-margin) * 0.8);
-    margin: var(--res-h1-margin) 0px -38px 0px;
+}
+
+#resume-preview .smaller h1 {
+    padding-bottom: 6px;
 }
 
 #resume-preview ul {
@@ -270,32 +306,41 @@ h2 {
     min-heiht: 208px;
 }
 
-#resume-preview .smaller {
+#resume-preview .smallest {
     display: block;
     width: var(--body-width);
     height: auto;
+    padding: 20px 0px 20px 0px;
 }
 
-#resume-preview .smaller .container {
+#resume-preview .smallest img {
+    max-width: calc(var(--res-box-width) /2);
+    min-width: 60px;
+}
+
+#resume-preview .smallest .container {
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottm: 10px;
 }
 
-#resume-preview .smaller:nth-child(1) {
+#resume-preview .smallest:nth-child(1) {
     margin-right: 0px;
+    padding-top: 30px;
 }
 
-#resume-preview .smaller:nth-child(3) {
+#resume-preview .smallest:nth-child(3) {
     margin-left: 0px;
+    padding-bottom: 40px;
 }
 
-#resume-preview .smaller h1 {
-    padding-top: 20px;
+#resume-preview .smallest h1 {
+    font-size: 20px;
 }
 
-#resume-preview .smaller p {
+#resume-preview .smallest p {
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
 }
 
 #resume-preview li:nth-child(1) {
@@ -385,7 +430,6 @@ h2 {
     display: inline-block;
 }
 
-
 #menu-container {
     width: 100%;
     margin-top: 65px;
@@ -413,7 +457,6 @@ h2 {
     font-family: 'Lato';
     margin-left: 140px;
     border: none;
-    fot-size: 12px;
     margin-top: -10px;
     text-align: left;
     line-height: 17px;
@@ -441,10 +484,8 @@ h2 {
     background-color: var(--gray-1);
 }
 
-
 nav li {
     text-align: center;
-    foat: left;
     display: inline-block;
     border: 1px solid var(--gray-1);
     padding: 15px 25px 15px 25px;
@@ -478,11 +519,10 @@ nav li {
 }
 
 #header .smaller {
- margin-top: -20px;
+    margin-top: -20px;
     width: 100vw;
     margin-left: var(--side-margins);
-   text-align: center;
- 
+    text-align: center;
 }
 
 #header .smaller .logo {
@@ -493,8 +533,6 @@ nav li {
     padding: 10px 12px 10px 12px;
     font-size: 10px;
     margin: 7px 5px 0px 5px;
-   
-    
 }
 
 .active-nav {

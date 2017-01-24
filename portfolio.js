@@ -288,7 +288,7 @@ var main = function () {
             });
         }
         // Resize resume preview boxes
-        if (window.innerWidth <= 1000) {
+        if (window.innerWidth <= 1120) {
             $('#resume-preview li').each(function () {
                 $(this).addClass('small');
             });
@@ -298,7 +298,8 @@ var main = function () {
                 $(this).removeClass('small');
             });
         }
-        if (window.innerWidth <= 817) {
+        // Smaller
+        if (window.innerWidth <= 920) {
             $('#resume-preview li').each(function () {
                 $(this).addClass('smaller');
             });
@@ -306,6 +307,17 @@ var main = function () {
         else {
             $('#resume-preview li').each(function () {
                 $(this).removeClass('smaller');
+            });
+        }
+        // Smallest
+        if (window.innerWidth <= 762) {
+            $('#resume-preview li').each(function () {
+                $(this).addClass('smallest');
+            });
+        }
+        else {
+            $('#resume-preview li').each(function () {
+                $(this).removeClass('smallest');
             });
         }
         // Resize work preview
@@ -321,7 +333,7 @@ var main = function () {
                 $('#work-previw').css('text-align', "left");
             });
         }
-        // Resize bio and nav
+        // Resize bio, nav, and margins
         if (window.innerWidth <= 674) {
             $('#bio .container').each(function () {
                 $(this).addClass('small');
