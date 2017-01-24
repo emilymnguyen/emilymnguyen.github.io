@@ -1,5 +1,8 @@
 /*global $ */
 /*jslint node: true*/
+/*
+ * Return width of obj
+ */
 function getWidth(obj) {
     var clone = obj.clone();
     clone.css("visibility", "hidden");
@@ -8,7 +11,9 @@ function getWidth(obj) {
     clone.remove();
     return width;
 }
-
+/*
+ * Return height of obj
+ */
 function getHeight(obj) {
     var clone = obj.clone();
     clone.css("visibility", "hidden");
@@ -17,35 +22,9 @@ function getHeight(obj) {
     clone.remove();
     return height;
 }
-
-function offset(pic) {
-    // If horizontal or square img
-    if ($(pic).css('width') >= $(pic).css('height')) {
-        alert("horizontal");
-        // Set height
-        $(pic).css('width', '274px');
-        // 
-        if (parseInt($(pic).css('height')) < 200) {
-            $(pic).css('width', '');
-            $(pic).css('height', '200px');
-        }
-    }
-    else {
-        $(pic).css('height', '200px');
-        alert("vertical");
-    }
-    return;
-}
-
-function isIE() {
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
-    if (msie > 0) // If Internet Explorer, return version number
-        return true;
-    else // If another browser, return 0
-        return false;
-}
-
+/*
+ * Check which button was clicked on and appropriately switch active classes
+ */
 function navClick(link) {
     if ($(link).hasClass('logo') === true) {
         location.reload();
@@ -60,15 +39,17 @@ function navClick(link) {
         return;
     }
     // Update active page
-    if ($(link).hasClass('about-link') === true) about();
+    if ($(link).hasClass('home-link') === true) home();
     else if ($(link).hasClass('work-link') === true) work();
     else if ($(link).hasClass('resume-link') === true) resume();
     return;
 }
-
+/*
+ * Go to the inputed page
+ */
 function nav(page) {
-    if (page === "" || page != about || page != work || page != resume) {
-        page = about;
+    if (page === "" || page != home || page != work || page != resume) {
+        page = home;
     }
     else {
         var pageClass = "." + page + "-link";
@@ -84,25 +65,29 @@ function nav(page) {
     // Fade in new active page
     $('.active').show();
     // Update background color
-    if (page === "about") $('body').css('background-color', '#fff');
+    if (page === "home") $('body').css('background-color', '#fff');
     else $('body').css('background-color', 'white');
     return;
 }
-
-function about() {
+/*
+ * Go to home
+ */
+function home() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
-    $('.about-link').addClass('active-nav');
+    $('.home-link').addClass('active-nav');
     // Fade out old page
     $('.active').hide().removeClass('active');
-    $('#about').addClass('active');
+    $('#home').addClass('active');
     // Fade in new active page
     $('.active').show();
     // Update background color
     $('body').css('background-color', '#fff');
     return;
 }
-
+/*
+ * Go to work
+ */
 function work() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
@@ -117,7 +102,9 @@ function work() {
     $('body').css('background-color', 'white');
     return;
 }
-
+/*
+ * Go to resume 
+ */
 function resume() {
     // Update active nav pointer
     $('.active-nav').removeClass('active-nav');
@@ -132,7 +119,9 @@ function resume() {
     $('body').css('background-color', 'white');
     return;
 }
-
+/*
+ * Animation for contact button
+ */
 function contact() {
     $('html, body').animate({
         scrollTop: $(document).height() - $(window).height() - 5
@@ -145,24 +134,25 @@ function contact() {
     });
     return;
 }
-
+/*
+ * Return ratio of img
+ */
 function getRatio(pic) {
     var width = getWidth(pic);
     var height = getHeight(pic);
     return width / height;
 }
-
+/*
+ * Add tall class to appropriate images
+ */
 function resize(pic) {
     // 274/200 = 1.37
-    // x < 1.37 means too tall
     var ratio = getRatio(pic);
     // Return if img is correct ratio
     if (ratio == 1.37) return;
     // Resize if img is too tall
     if (ratio < 1.37) {
-        // Set max-width and reset max height
-        $(pic).css('max-height', "999px");
-        $(pic).css('max-width', "var(--entry-width)");
+        $(pic).addClass('tall');
         return;
     }
 }
@@ -255,117 +245,66 @@ function expandEntry(entry) {
     $('body').attr('scroll', 'no');
     $('body').css('overflow', 'hidden');
 }
+
+function sizeClasses(width) {
+    // Small header
+    if (width <= 1035) {
+        $('#header ul').addClass('small');
+    }
+    else {
+        $('#header ul').removeClass('small');
+    }
+    // Small bio / smaller header
+    if (width <= 674) {
+        $('#bio .container').addClass('small');
+        $('#header ul').addClass('smaller');
+        $('.content').css('margin-top', '155px');
+    }
+    else {
+        $('#bio .container').removeClass('small');
+        $('#header ul').removeClass('smaller');
+        $('.content').css('margin-top', '200px');
+    }
+    // Hide logo text / small work
+    if (width <= 884) {
+        $('.logo:nth-child(2)').hide();
+        $('#work li').addClass('small');
+    }
+    else {
+        $('.logo:nth-child(2)').show();
+        $('#work li').removeClass('small');
+    }
+    // Small work preview / smaller work
+    if (width <= 550) {
+        $('#work-preview li').addClass('small');
+        $('#work li').addClass('smaller');
+    }
+    else {
+        $('#work-preview li').removeClass('small');
+        $('#work li').removeClass('smaller');
+    }
+    // Small resume preview
+    if (width <= 1120) $('#resume-preview li').addClass('small');
+    else $('#resume-preview li').removeClass('small');
+    // Smaller resume preview
+    if (width <= 920) $('#resume-preview li').addClass('smaller');
+    else $('#resume-preview li').removeClass('smaller');
+    // Smallest resume preview
+    if (width <= 762) $('#resume-preview li').addClass('smallest');
+    else $('#resume-preview li').removeClass('smallest');
+    return;
+}
 var main = function () {
     //alert(window.innerWidth);
+    // Apply appropriate size classes
+    sizeClasses(window.innerWidth);
+    // Switch out size classes on window resizes
     $(window).resize(function () {
-        // Resize nav
-        if (window.innerWidth <= 1035) {
-            $('#header ul').each(function () {
-                $(this).addClass('small');
-            });
-        }
-        else {
-            $('#header ul').each(function () {
-                $(this).removeClass('small');
-            });
-        }
-        // Resize nav
-        if (window.innerWidth <= 884) {
-            $('.logo:nth-child(2)').hide();
-        }
-        else {
-            $('.logo:nth-child(2)').show();
-        }
-        // Resize work
-        if (window.innerWidth <= 724) {
-            $('#work').each(function () {
-                $(this).addClass('s724');
-            });
-        }
-        else {
-            $('#work').each(function () {
-                $(this).removeClass('s724');
-            });
-        }
-        // Resize resume preview boxes
-        if (window.innerWidth <= 1120) {
-            $('#resume-preview li').each(function () {
-                $(this).addClass('small');
-            });
-        }
-        else {
-            $('#resume-preview li').each(function () {
-                $(this).removeClass('small');
-            });
-        }
-        // Smaller
-        if (window.innerWidth <= 920) {
-            $('#resume-preview li').each(function () {
-                $(this).addClass('smaller');
-            });
-        }
-        else {
-            $('#resume-preview li').each(function () {
-                $(this).removeClass('smaller');
-            });
-        }
-        // Smallest
-        if (window.innerWidth <= 762) {
-            $('#resume-preview li').each(function () {
-                $(this).addClass('smallest');
-            });
-        }
-        else {
-            $('#resume-preview li').each(function () {
-                $(this).removeClass('smallest');
-            });
-        }
-        // Resize work preview
-        if (window.innerWidth <= 488) {
-            $('#work-preview li').each(function () {
-                $(this).addClass('small');
-                $('#work-preview').css('text-align', "center");
-            });
-        }
-        else {
-            $('#work-preview li').each(function () {
-                $(this).removeClass('small');
-                $('#work-previw').css('text-align', "left");
-            });
-        }
-        // Resize bio, nav, and margins
-        if (window.innerWidth <= 674) {
-            $('#bio .container').each(function () {
-                $(this).addClass('small');
-            });
-            $('#header ul').each(function () {
-                $(this).addClass('smaller');
-            });
-            $('.content').css('margin-top', '155px');
-        }
-        else {
-            $('#bio .container').each(function () {
-                $(this).removeClass('small');
-            });
-            $('#header ul').each(function () {
-                $(this).removeClass('smaller');
-            });
-            $('.content').css('margin-top', '200px');
-        }
+        sizeClasses(window.innerWidth);
     });
-    // $('body').css('background-color', '#fff');
-    // Center each gallery img
+    // Check for tall gallery images and resize
     $('#work li').each(function () {
-        //offset($(this).find('img'), $('.img-container'));
-        //  offset($(this).find('img'));
         resize($(this).find('img'));
-    });
-    // Resume circle animation
-    $('.circle').hover(function () {
-        $(this).effect('shake', {
-            times: 2
-            , distance: 3
-        }, 400);
     });
     /* MENU CLICK */
     $('nav li').click(function () {

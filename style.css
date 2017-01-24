@@ -50,9 +50,9 @@ h2 {
 }
 
 
-/* -------------------------- ABOUT -----------------------------*/
+/* -------------------------- HOME -----------------------------*/
 
-#about {
+#home {
     dispay: none;
 }
 
@@ -363,33 +363,6 @@ h2 {
     margin-bottom: 0px;
 }
 
-.circle {
-    width: 12px;
-    height: 12px;
-    background: #28a57c;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-}
-
-.empty-circle {
-    width: 10px;
-    height: 10px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 6px;
-    border: solid 1px #28a57c;
-}
-
-.half-circle {
-    height: 10px;
-    width: 5px;
-    border-radius: 90px 90px 0 0;
-    -moz-border-radius: 90px 90px 0 0;
-    -webkit-border-radius: 90px 0 0 90px;
-    background: green;
-}
-
 .skills {
     width: 420px;
     font-weight: 300;
@@ -476,7 +449,7 @@ h2 {
     /* cursor: hand;*/
 }
 
-#header li:hover,
+nav li:hover,
 .visit a:hover {
     color: white;
     background-color: var(--gray-1);
@@ -757,12 +730,82 @@ body,
     display: none;
 }
 
+#work ul {
+    padding: 0px;
+    list-style: none;
+}
+
+
+/* Work li */
+
+#work li {
+    width: var(--entry-width);
+    height: calc(var(--entry-width) / 1.37);
+    display: inline-block;
+    margin-bottom: var(--entry-margins);
+    margin-top: calc(var(--entry-margins) - 6px);
+}
+
+#work li:nth-child(3n+1) {
+    margin-right: var(--entry-margins);
+}
+
+#work li:nth-child(3n+3) {
+    margin-left: var(--entry-margins);
+}
+
+#work .small {
+    width: calc(var(--body-width)/2 - 12px);
+    height: calc(var(--entry-width) / 0.86);
+}
+
+#work .small:nth-child(odd) {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#work .small:nth-child(even) {
+    margin-left: 10px;
+}
+
+#work .smaller {
+    width: calc(var(--body-width));
+    height: calc(var(--body-width) / 1.37);
+}
+
+#work .smaller:nth-child(even) {
+    margin-left: 0px;
+}
+
+
+/* Work .entry */
+
+.entry {
+    height: 100%;
+}
+
+
+/* Work .img-container */
+
 #work .img-container {
     position: relative;
     width: var(--entry-width);
     height: calc(var(--entry-width) / 1.37);
     overflow: hidden;
 }
+
+#work .small .img-container {
+    width: calc(var(--body-width)/2 - 12px);
+    height: calc(var(--entry-width) / 0.86);
+}
+
+#work .smaller .img-container {
+    width: calc(var(--body-width));
+    height: calc(var(--body-width) / 1.37);
+}
+
+
+/* Work img */
 
 #work img {
     position: absolute;
@@ -778,38 +821,43 @@ body,
     opacity: 0.8;
 }
 
+#work .tall {
+    width: 100%;
+    max-height: 9999px;
+}
+
+#work .small img {
+    max-height: calc(var(--entry-width) / 0.86);
+}
+
+#work .small .tall {
+    max-height: 9999px;
+}
+
+#work .smaller img {
+    max-height: calc(var(--body-width) / 1.37);
+}
+
+#work .smaller .tall {
+    max-height: 9999px;
+}
+
+
+/* Work video */
+
 #work video {
     display: none;
 }
+
+
+/* Work iframe */
 
 #work iframe {
     display: none;
 }
 
-#work ul {
-    padding: 0px;
-    list-style: none;
-}
 
-.s724 li {
-    with: calc(var(--body-width)/2 - 10px);
-    width: 800px;
-    height: calc(var(--entry-width) / 0.86);
-    min-height: 364px;
-    backgrond-color: red;
-}
-
-#work li {
-    width: var(--entry-width);
-    height: calc(var(--entry-width) / 1.37);
-    display: inline-block;
-    margin-bottom: var(--entry-margins);
-    margin-top: calc(var(--entry-margins) - 6px);
-}
-
-.entry {
-    height: 100%;
-}
+/* Description */
 
 .expand {
     font-size: 10px;
@@ -817,14 +865,6 @@ body,
     font-family: 'Lato', 'Arial', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-}
-
-#work li:nth-child(3n+1) {
-    margin-right: var(--entry-margins);
-}
-
-#work li:nth-child(3n+3) {
-    margin-left: var(--entry-margins);
 }
 
 .date {
@@ -847,22 +887,6 @@ body,
 
 .extra {
     display: none;
-}
-
-.visit a {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 400;
-    font-size: 12px;
-    color: var(--gray-1);
-    text-decoration: none;
-    border: 1px solid var(--gray-1);
-    padding: 15px 25px 15px 25px;
-}
-
-.visit {
-    display: none;
-    margin-top: 50px;
 }
 
 #work .small-p,
@@ -975,6 +999,22 @@ body,
 
 
 /*****************************/
+
+.visit a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--gray-1);
+    text-decoration: none;
+    border: 1px solid var(--gray-1);
+    padding: 15px 25px 15px 25px;
+}
+
+.visit {
+    display: none;
+    margin-top: 50px;
+}
 
 .close {
     top: 0;
