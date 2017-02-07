@@ -363,15 +363,10 @@ h2 {
     margin-bottom: 0px;
 }
 
-.skills {
-    width: 420px;
-    font-weight: 300;
-    margin-bottom: 18px;
-    letter-spacing: 0.4px;
-}
-
-.skills td {
-    padding-bottom: 4px;
+#resume iframe {
+    width: var(--body-width);
+    height: 100vh;
+    margin-bottom: -20px;
 }
 
 
@@ -531,7 +526,7 @@ nav li {
 
 #footer td,
 #footer a {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     text-align: center;
     color: var(--gray-1);
@@ -541,11 +536,11 @@ nav li {
 
 #footer table {
     margin: auto;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 #footer img {
-    height: 40px;
+    height: 50px;
 }
 
 #footer img,
@@ -565,7 +560,7 @@ body,
 }
 
 .media-icons td {
-    padding: 29px 27px 10px 27px;
+    padding: 29px 27px 0px 27px;
 }
 
 
@@ -588,12 +583,12 @@ body,
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -160px;
+    margin-bottom: -195px;
 }
 
 #footer,
 .push {
-    height: 130px;
+    height: 170px;
 }
 
 
