@@ -2,251 +2,177 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="http://emnguyen.github.io/favicon.ico" />
-    <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,400,700|Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <!-- portfolio.js -->
+    <!--
+<link rel="icon" href="http://emnguyen.github.io/???/favicon.ico" /> -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Load intro 
+    <script>
+        $(function () {
+            $("#intro").load("intro.html");
+        });
+    </script> -->
+    <!--
+<script type="text/javascript" src="script.js"></script> -->
+    <!-- Import css files -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="portfolio.js"></script>
-    <!-- jQuery , update header/footer? -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- jQuery UI -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="intro.css" data-skrollr-stylesheet>
+    <meta charset="UTF-8">
     <title>Emily Nguyen</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <!----------------------------- HEADER ----------------------------->
-        <div id="header"></div>
-        <!----------------------------- HOME ------------------------------->
-        <div id="home" class="active">
-            <div class="content">
-                <div id="bio">
-                    <div class="container">
-                        <div class="img-container"> <img src="profile.jpg"></div>
-                        <h1>Emily Nguyen</h1>
-                        <p>Hi, I'm Emily! I study Mathematics-Computer Science at the University of California, San Diego. You can find me playing around with Adobe Illustrator when I'm not programming. As someone who is keen on the intersection of problem solving and artistic creation, I am an aspiring UI/UX engineer.
-                            <br>
-                            <br>This portfolio is the collection of projects I've created to strengthen my budding skill set and explore my interest in design and development. </p>
-                    </div>
-                </div>
-                <div id='work-preview'>
-                    <h1>Work</h1>
-                    <ul>
-                        <li>
-                            <div class="img-container"> <img src="portfolio/bakery.png"> </div>
-                        </li>
-                        <li>
-                            <div class="img-container"><img src="portfolio/base-converter.png"></div>
-                        </li>
-                    </ul>
-                    <div style="text-align: center" class="see-more sm-work"><span>See more +</span></div>
-                </div>
-                <div id='resume-preview'>
-                    <ul>
-                        <li>
-                            <div class="container">
-                                <h1>Experience</h1><img src="/resume-icons/experience.png">
-                                <p>Web Developer at UCSD Alumni &amp; Community Engagement</p> <span class="date">May 2016 - Present</span> </div>
-                        </li>
-                        <li>
-                            <div class="container">
-                                <h1>Skills</h1><img src="/resume-icons/skills.png">
-                                <p>Proficient in HTML/CSS, JavaScript, Adobe Illustrator, and more</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="container">
-                                <h1>Education</h1><img src="/resume-icons/education.png">
-                                <p>B.S. in Mathematics-Computer Science</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div style="text-align: center" class="see-more sm-resume"><span>See more +</span></div>
-                </div>
-            </div>
-        </div>
-        <!--------------------------- WORK ---------------------------->
-        <div id="work">
-            <div class="content">
-                <ul>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"> <img src="portfolio/bakery.png">
-                                <video controls>
-                                    <source src="/portfolio/bakery-demo.mp4" type="video/mp4"> </video>
-                            </div>
-                            <h2>Jazz's Kitchen</h2>
-                            <p class="date">January 12, 2017</p>
-                            <p class="small-p">Website for the fictitious bakery Jazz's Kitchen.<span class="extra"></span> </p>
-                            <div class="visit">
-                                <a href="http://emnguyen.github.io/bakery"> </a>
-                            </div>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="portfolio/base-converter.png">
-                                <video controls>
-                                    <source src="/portfolio/base-converter-demo.mp4" type="video/mp4"> </video>
-                            </div>
-                            <h2>Base Converter</h2>
-                            <p class="date">December 16, 2016</p>
-                            <p class="small-p">Simple, clean tool to convert numbers from one base to another.<span class="extra"></span> </p>
-                            <div class="visit">
-                                <a href="http://emnguyen.github.io/base-converter"> </a>
-                            </div>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"> <img src="/portfolio/apsa-hsc-2016-program.jpg">
-                                <iframe src="https://drive.google.com/file/d/0B6dEoGhrXuYITno3Z0o0dnhnMEk/preview"></iframe>
-                            </div>
-                            <h2>APSA HSC 2016 Program</h2>
-                            <p class="date">July 2, 2015</p>
-                            <p class="small-p">Program for UCSD Asian & Pacific Islander Student Alliance's High School Conference.<span class="extra"> </span> </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"> <img src="/portfolio/apsa-hsc-2016-flyer.jpg"> </div>
-                            <h2>APSA HSC 2016 Flyer</h2>
-                            <p class="date">July 2, 2015</p>
-                            <p class="small-p">Flyer for UCSD Asian & Pacific Islander Student Alliance's High School Conference.<span class="extra"> </span> </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"> <img src="portfolio/tasty-donuts.jpg"> </div>
-                            <h2>Tasty Donuts</h2>
-                            <p class="date">July 2, 2015</p>
-                            <p class="small-p">Business card for Tasty Donuts.<span class="extra"></span> </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <!--
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="http://www.newyorker.com/wp-content/uploads/2016/04/Larson-Game-of-Thrones-Returns-1200.jpg"></div>
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p class="date">September 5, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim velit non elit mattis, id bibendum justo posuere.<span class="extra"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim velit non elit mattis, id bibendum justo posuere.</span> </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="https://wallpaperscraft.com/image/game_of_thrones_richard_madden_robb_stark_94607_1920x1080.jpg"></div>
-                            <h2>In Dignissim Velit non Elit Mattis</h2>
-                            <p class="date">September 5, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim velit non elit mattis, id bibendum justo posuere. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="http://www.flickeringmyth.com/wp-content/uploads/2014/04/breaker-of-chains.jpg"></div>
-                            <h2>Lorem Ipsum Dolor Sit Amet</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="https://metrouk2.files.wordpress.com/2016/06/bastard-battle-game-of-thrones.jpg"></div>
-                            <h2>Lorem Ipsum Dolor Sit Amet, Consectetur</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="http://www.bestwallpapershq.com/wp-content/uploads/2016/05/sophie_turner_sansa_stark_game_of_thrones_season_6-wide.jpg"></div>
-                            <h2>In Dignissim Velit non Elit Mattis</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim velit non elit mattis, id bibendum justo posuere. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="https://lovelace-media.imgix.net/uploads/1256/88dd4390-8d12-0133-6de8-0efce411145f.jpg?"></div>
-                            <h2>Lorem Ipsum Dolor Sit Amet, Consectetur</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="http://1.bp.blogspot.com/-pBIxo75zHJY/UTWjs-yBL9I/AAAAAAAAA8k/6mN75KT2-xk/s1600/Bronn-game-of-thrones-22077692-1024-576.png"></div>
-                            <h2>Consectetur</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li>
-                    <li>
-                        <div class="entry">
-                            <div class="img-container"><img src="http://im.ziffdavisinternational.com/t/ign_za/articlepage/y/young-cersei-lannister-cast-in-game-of-thrones/young-cersei-lannister-cast-in-game-of-thrones_wt89.1920.jpg"></div>
-                            <h2>Lorem Ipsum Dolor Sit Amet</h2>
-                            <p class="date">September 3, 2016</p>
-                            <p class="small-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim velit non elit mattis, id bibendum justo posuere. </p>
-                        </div>
-                        <div class="expand"><a>Expand +</a></div>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
-        <!------------------------ PORTFOLIO EXPAND ---------------------->
-        <div id="overlay">
-            <div class="container">
-                <div class="close">close &nbsp;x</div>
-                <div class="entry-container">
-                    <div class="img-container">
-                        <iframe src="" frameborder="0"> </iframe><img src="">
-                        <video controls>
-                            <source src="">Your browser does not support the video tag.</video>
-                    </div>
-                    <div class="desc-container">
-                        <h2></h2>
-                        <p class="date"></p>
-                        <p class="small-p"></p>
-                        <div class="visit"> <a href="/" target="_blank">
-                            Visit Site
-                            </a> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!---------------------------- RESUME ----------------------------->
-        <div id="resume">
-            <div class="content">
-               <iframe src="https://drive.google.com/file/d/0B6dEoGhrXuYIYzRDY2Z0Um5wNTg/preview" frameborder="0"></iframe>
-            </div>
-        </div>
-        <!------------------------ END OF CONTENT ------------------------->
-        <!-- closing tag for container -->
-        <div class="push"></div>
-        <!-- closing tag for wrapper -->
+    <div id="title-container">
+        <div class="spacer"></div>
+        <div id="title-wrap">
+            <h1 id="title"><span style="text-shadow: rgba(0,0,0,0.3) 1px 1px 2px;">Emily Nguyen&nbsp;&nbsp;/&nbsp;&nbsp;Designer&nbsp;&nbsp;/&nbsp;&nbsp;Developer</span></h1> </div>
     </div>
-    <div id="footer"></div>
-    <script>
-        $('#header').load('header.html');
-        $('#footer').load('footer.html');
+    <div id="intro">
+        <div class="spacer"></div>
+        <div id="svg-container">
+            <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="63.9 0 664.3 612" enable-background="new 63.9 0 664.3 612" xml:space="preserve">
+                    <g id="quad-1">
+                        <polygon fill="#D9CBBB" points="394.4,348.3 388.7,331.9 399,280.5 407.4,243.6 407.5,243.6 410.3,266.7 407.7,330.8 423.1,342 
+		425.3,360 	" />
+                        <polygon fill="#BFB1A5" points="347.4,298.2 347.7,300.1 361.2,300.1 359.1,297.3 	" />
+                        <polygon fill="#FFFFFF" points="356.1,297.5 358.9,287.4 354.9,277.8 356.4,277.4 374,286.4 372.2,289.8 359.1,297.5 	" />
+                        <polygon fill="#BFB1A5" points="339.4,261.5 341.2,254.1 352.8,252.1 359.3,267.9 341.4,270.7 	" />
+                        <polygon fill="#CCBEB0" points="358.9,297.4 385.2,281.8 382.6,288.9 361.1,300.3 	" />
+                        <polygon fill="#CCBEB0" points="341.3,270.4 359.2,267.7 357.5,273.8 342.4,275.8 	" />
+                        <polygon fill="#CCBEB0" points="359,268 352.5,252.2 377.6,254 386.3,264.3 386.4,279 385.2,282.1 381.7,284.2 	" />
+                        <polygon fill="#E5D9C9" points="359.8,348.3 386.1,279 386.1,264.2 399.2,280.5 389,331.9 394.6,348.2 373.7,357.2 	" />
+                        <polygon fill="#DFD0C1" points="357.2,273.9 359,267.7 381.9,283.9 377.6,286.6 	" />
+                        <polygon fill="#DFD0C1" points="377.5,254.2 370.5,237.3 363,169.6 409,125.5 400.9,225.1 407.7,243.5 399.2,280.9 	" />
+                        <polygon fill="#DFD0C1" points="345.4,326.3 347.6,300 361.2,300 382.6,288.7 360.1,348.2 363.8,364.1 356.8,380.6 	" />
+                        <polygon fill="#D9CBBB" points="408.8,125.7 456.7,117.3 455.9,198.2 400.6,225.3 	" />
+                        <polygon fill="#D2C5B7" points="363,169.6 363.2,169.6 370.8,237.3 344.8,238.6 	" />
+                        <polygon fill="#333333" points="373.7,286.5 356.4,277.7 343.6,280.9 342.4,275.6 357.3,273.6 377.8,286.4 371.7,290.1 	" />
+                        <polygon fill="#423D3B" points="343.5,280.7 355,277.6 359.2,287.3 356.3,297.4 347.3,298.3 	" />
+                        <polygon fill="#4C4A49" points="360.9,237.7 370.7,237.1 377.7,254.1 377.6,254.2 377.6,254.3 	" />
+                        <polygon fill="#423F3D" points="352.7,252.4 341.2,254.3 344.9,238.4 361.1,237.5 378,254.3 	" />
+                        <polygon fill="#565655" points="323,176.5 236.3,211.3 291.2,261.3 	" />
+                        <polygon fill="#565655" points="292.1,261.3 262.1,322.7 306.7,271.5 	" />
+                        <polygon fill="#565655" points="313.9,111.7 363.2,169.6 389.6,81.8 	" />
+                        <polygon fill="#4F4F4E" points="234.5,211.3 261.3,322.7 289.5,262.2 	" />
+                        <polygon fill="#4F4F4E" points="389.6,81.8 456.6,117.4 460.9,74.7 	" />
+                        <polygon fill="#4F4F4E" points="363.2,169.6 324.8,176.8 339.6,261.4 	" />
+                        <polygon fill="#423F3D" points="323,175.6 236.3,210.4 311.3,111.7 	" />
+                        <polygon fill="#423F3D" points="347.7,300.1 292.1,261.3 339.6,261.4 	" />
+                        <polygon fill="#423F3D" points="238.5,236.7 194.4,264.4 252.2,289.3 	" />
+                        <polygon fill="#423F3D" points="389.6,81.8 363.2,169.6 408.9,125.7 	" />
+                        <polygon fill="#494746" points="339.6,261.4 292.1,260.4 323.8,176.5 	" />
+                        <polygon fill="#494746" points="345.5,326.3 263,322.7 307.6,273.2 347.7,300.1 	" />
+                        <polygon fill="#494746" points="201.2,268.4 262.1,322.7 254.9,291.1 	" />
+                        <polygon fill="#494746" points="408.9,125.7 456.6,117.4 389.6,82.7 	" />
+                        <polygon fill="#494746" points="312.1,111.7 323.9,175.9 363.2,169.6 	" /> </g>
+                    <g id="quad-2">
+                        <polygon fill="#FFFFFF" points="448.7,261.3 442.8,250.2 453.2,247.5 478.4,258.4 459.1,270.6 446.6,272.9 	" />
+                        <polygon fill="#BFB1A5" points="410,266.7 407.4,243.6 438.5,222.3 468.1,210.6 456.8,237.3 425.2,245.7 423.4,277.1 419.3,284.9 	
+		" />
+                        <polygon fill="#CCBEB0" points="493.9,204.1 477,198.3 505.7,128.8 528.8,143.6 540.3,173.6 525.9,221.6 	" />
+                        <polygon fill="#CCBEB0" points="425,245.4 430.7,249.1 427.1,276.4 423.1,277.3 	" />
+                        <polygon fill="#CCBEB0" points="423.2,277 458.9,270.3 466.9,279 419.1,284.7 	" />
+                        <polygon fill="#CCBEB0" points="456.5,237.4 467.9,210.7 525.9,221.3 502.3,243.7 490.9,250.8 	" />
+                        <polygon fill="#CCBEB0" points="525.7,221.5 540.2,173.5 564.9,226.1 	" />
+                        <polygon fill="#E5D9C9" points="453.1,242.2 456.5,237.1 491,250.6 485.3,254.3 	" />
+                        <polygon fill="#D9CBBB" points="424.9,245.6 456.8,237.1 453.3,242.2 430.6,249.4 	" />
+                        <polygon fill="#D2C5B7" points="458.8,270.5 502.2,243.5 502.3,243.6 466.6,279.2 	" />
+                        <polygon fill="#D2C5B7" points="455.7,198.4 456.5,117.3 505.9,128.8 477.3,198.4 	" />
+                        <polygon fill="#423D3B" points="431.6,267.7 433.7,252.5 443,250.1 449,261.2 446.9,272.8 435.8,274.9 	" />
+                        <polygon fill="#333333" points="430.4,249.3 453.2,242 485.5,254.1 478.3,258.6 453.1,247.8 433.9,252.6 431.9,267.7 436.1,274.8 
+		426.8,276.6 	" />
+                        <polygon fill="#4C4A49" points="400.6,225 414,218.4 407.5,244.1 	" />
+                        <polygon fill="#423F3D" points="413.8,218.6 455.7,198.1 477.2,198.1 494,203.8 525.8,221.3 525.8,221.4 468,210.9 438.7,222.5 
+		407.3,243.9 	" />
+                        <polygon fill="#565655" points="456.6,117.4 505.8,128.9 460.9,74.7 	" />
+                        <polygon fill="#565655" points="528.8,143.7 540.2,173.7 624.8,139.7 	" />
+                        <polygon fill="#565655" points="643.7,202.7 564.6,225.9 612.9,246.1 	" />
+                        <polygon fill="#565655" points="576.1,291 612.7,278.3 564.6,225.9 	" />
+                        <polygon fill="#4F4F4E" points="505.8,128.9 528.8,143.7 539.3,81.8 	" />
+                        <polygon fill="#4F4F4E" points="624.8,139.7 587.5,154.2 644.5,202.7 	" />
+                        <polygon fill="#4F4F4E" points="612.9,247 564.6,225.9 613.6,278.3 652.8,264.4 	" />
+                        <polygon fill="#423F3D" points="461.8,74.7 505.8,128.9 540.2,81.8 	" />
+                        <polygon fill="#423F3D" points="597.6,106.9 528.8,143.7 624.8,138.9 	" />
+                        <polygon fill="#423F3D" points="540.2,173.7 564.6,225.9 588.4,154.2 	" />
+                        <polygon fill="#423F3D" points="652.8,263.5 645.4,202.7 612.9,247 	" />
+                        <polygon fill="#494746" points="540.2,81.8 528.8,143.7 597.6,106 	" />
+                        <polygon fill="#494746" points="588.4,156 564.6,225.9 643.7,202.7 	" />
+                        <polygon fill="#DFD0C1" points="422.9,342.1 407.4,330.9 410,266.4 419.5,284.5 466.6,278.9 502.1,243.5 525.8,221.1 519.3,294.7 
+		425,360.1 	" /> </g>
+                    <g id="quad-3">
+                        <polygon fill="#E5D9C9" points="427.5,407.2 412.9,402.4 394.4,396.7 392.6,386.9 394.3,367.3 410.9,369.9 425.1,359.7 
+		478.4,396.5 448.2,414.6 	" />
+                        <polygon fill="#DFD0C1" points="425,359.9 519.3,294.4 513.7,317.9 478.3,396.8 	" />
+                        <polygon fill="#DFD0C1" points="425.2,430.6 448.1,414.3 493.6,481.7 427.5,500.2 	" />
+                        <polygon fill="#DFD0C1" points="448,414.5 478.2,396.4 554.6,453.1 493.3,481.8 	" />
+                        <polygon fill="#D2C5B7" points="513.4,317.8 519,294.6 525.6,221.3 564.7,225.8 576.3,291 579.4,342.8 532.9,376.8 478,396.8 	" />
+                        <polygon fill="#D9CBBB" points="478.1,396.6 532.7,376.5 579.3,342.6 582.4,392.1 574.3,426.7 554.5,453.4 	" />
+                        <polygon fill="#565655" points="613.8,279.1 579.3,342.8 652.8,324.4 	" />
+                        <polygon fill="#565655" points="622.4,333.8 582.3,392.1 629.6,396.6 	" />
+                        <polygon fill="#565655" points="574.1,426.7 611.1,442 582.3,392.1 	" />
+                        <polygon fill="#4F4F4E" points="622.4,332 630.5,396.6 654.6,326.2 	" />
+                        <polygon fill="#4F4F4E" points="554.4,453.2 537.5,484.2 569.9,468.1 	" />
+                        <polygon fill="#423F3D" points="576.1,291 579.3,342.8 612.9,278.3 	" />
+                        <polygon fill="#423F3D" points="582.3,392.1 611.9,441.1 632.3,398.3 	" />
+                        <polygon fill="#423F3D" points="554.4,453.2 569.9,468.1 611.1,443.7 	" />
+                        <polygon fill="#423F3D" points="491.2,504.2 536.6,485.7 493.4,481.7 	" />
+                        <polygon fill="#494746" points="612.9,278.3 652.8,322.7 652.8,266.2 	" />
+                        <polygon fill="#494746" points="579.3,343.6 582.3,393 622.4,332.9 	" />
+                        <polygon fill="#494746" points="574.1,426.7 554.4,453.2 611.1,442 	" />
+                        <polygon fill="#494746" points="493.4,481.7 536.6,483.4 554.4,453.2 	" /> </g>
+                    <g id="quad-4">
+                        <polygon fill="#BFB1A5" points="363.6,364.3 359.8,348 373.7,356.9 382.1,371.7 	" />
+                        <polygon fill="#CCBEB0" points="381.7,371.6 373.4,356.9 394.6,367.3 388.1,371.9 	" />
+                        <polygon fill="#D9CBBB" points="400.8,496 386.1,477 387.1,437.9 399.9,437.8 425.4,430.4 427.7,500.1 	" />
+                        <polygon fill="#D9CBBB" points="362.4,407.2 356.7,380.1 363.5,364 381.8,371.3 378.9,389.6 375.8,398.6 369.4,409.4 	" />
+                        <polygon fill="#D2C5B7" points="375.6,398.7 378.6,389.5 381.6,371.3 388.1,371.6 394.5,367.2 392.9,386.9 394.6,396.5 
+		386.4,402.4 	" />
+                        <polygon fill="#D2C5B7" points="386.1,477 362.3,406.9 369.4,409.1 377.5,417.3 376.6,430.6 387.3,437.8 386.4,476.9 386.2,477 
+		386.1,477 	" />
+                        <polygon fill="#D2C5B7" points="394.4,367.5 373.5,357.1 394.4,348 425.3,359.7 410.9,370.2 	" />
+                        <polygon fill="#AA6868" points="369.2,409.3 375.6,398.5 386.5,402.1 394.4,396.4 416.4,403.2 429.6,407.7 448.2,414.3 
+		448.2,414.4 418.6,412.8 398.5,415.2 386.4,415.2 377.3,417.5 	" />
+                        <polygon fill="#AA6868" points="387.2,438.1 376.4,430.7 377.2,417.4 386.4,414.9 398.5,414.9 418.6,412.5 448.4,414.3 
+		425.4,430.7 399.9,438.1 	" />
+                        <polygon fill="#965656" points="377.4,417.5 377.3,417.4 386.4,414.9 398.5,414.9 418.6,412.5 448.2,414.3 448.2,414.4 
+		418.6,415.2 399.1,417.5 	" />
+                        <polygon opacity="0.8" fill="#565655" enable-background="new    " points="176,308.3 210.8,277.2 228.7,346.8 	" />
+                        <polygon opacity="0.9" fill="#4F4F4E" enable-background="new    " points="212.6,281.6 241.1,384.8 295.1,353.5 	" />
+                        <polygon fill="#565655" points="242.9,386.6 362.5,407 297.7,356.1 	" />
+                        <polygon opacity="0.9" fill="#565655" enable-background="new    " points="287.1,395.9 315.8,501.6 355.1,453.6 	" />
+                        <polygon opacity="0.7" fill="#565655" enable-background="new    " points="285,508.6 209.5,495.5 297.4,463.7 	" />
+                        <polygon opacity="0.7" fill="#565655" enable-background="new    " points="226.5,441.4 156.8,353.8 236.8,388.3 	" />
+                        <polygon opacity="0.5" fill="#565655" enable-background="new    " points="110.5,431.6 159.7,450.8 146.2,411.6 	" />
+                        <polygon fill="#4F4F4E" points="362.5,407 302.6,325.6 345.5,326.3 	" />
+                        <polygon opacity="0.9" fill="#4F4F4E" enable-background="new    " points="239.4,387.4 300.5,454.5 285.3,395.9 	" />
+                        <polygon opacity="0.6" fill="#4F4F4E" enable-background="new    " points="216.4,482 158.9,478.3 222.2,451.9 	" />
+                        <polygon opacity="0.6" fill="#4F4F4E" enable-background="new    " points="176.7,393 172.8,449.9 198,419.6 	" />
+                        <polygon fill="#423F3D" points="262.1,322.7 362.5,407.9 300,325.6 	" />
+                        <polygon opacity="0.9" fill="#423F3D" enable-background="new    " points="401.7,496.8 311,512.5 356.8,454.5 387.1,477.8 	" />
+                        <polygon opacity="0.8" fill="#423F3D" enable-background="new    " points="310.4,496.9 282.7,524.1 300.5,457.1 	" />
+                        <polygon opacity="0.7" fill="#423F3D" enable-background="new    " points="186.1,318.7 132.8,348.6 226.9,348.6 	" />
+                        <polygon opacity="0.6" fill="#423F3D" enable-background="new    " points="162.1,370.2 136.6,384.7 177.5,389.5 	" />
+                        <polygon opacity="0.6" fill="#423F3D" enable-background="new    " points="203.2,420.5 160.6,472.2 223.4,445.8 	" />
+                        <polygon opacity="0.8" fill="#423F3D" enable-background="new    " points="239.4,391.8 229.1,445 299.6,457.1 	" />
+                        <polygon fill="#494746" points="385.3,475.2 290.6,395.9 362.5,407.9 	" />
+                        <polygon opacity="0.8" fill="#494746" enable-background="new    " points="238.5,384.8 158.5,350.3 228.7,350.3 	" />
+                        <polygon opacity="0.5" fill="#494746" enable-background="new    " points="146.1,391.8 166.7,451.6 170.6,394.7 	" />
+                        <polygon opacity="0.7" fill="#494746" enable-background="new    " points="297.9,461 227.4,448.9 219.3,489.2 	" /> </g>
+                </svg>
+        </div>
+    </div>
+    <div id="content-container">
+        <div id="content"> Lorem ipsum doth dolor sit. </div>
+    </div>
+    <!-- Skrollr stylesheets -->
+    <script type="text/javascript" src="/js/skrollr.stylesheets.js"></script>
+    <!-- Skrollr -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.27/skrollr.min.js"></script>
+    <script type="text/javascript">
+        var s = skrollr.init();
     </script>
 </body>
 

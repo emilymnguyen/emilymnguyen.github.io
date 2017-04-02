@@ -1,0 +1,367 @@
+#intro {
+    background-clor: #36383A;
+    background-color: rgb(54, 56, 59);
+    height: calc(100vh + 1000px);
+    position: relative;
+    z-index: -100;
+}
+
+#intro .spacer {
+    height: 800px;
+    display: none;
+}
+
+#svg-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+svg {
+    z-index: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    -skrollr-animation-name: svg-animation;
+}
+
+@-skrollr-keyframes svg-animation {
+    0 {
+        position: fixed;
+    }
+    900 {
+        position: static !important;
+    }
+}
+
+#intro .spacer {
+    -skrollr-animation-name: intro-spacer-animation;
+}
+
+@-skrollr-keyframes intro-spacer-animation {
+    0 {
+        display: none;
+    }
+    800 {
+        display: none;
+    }
+}
+
+#title-container .spacer {
+    -skrollr-animation-name: title-spacer-animation;
+}
+
+@-skrollr-keyframes title-spacer-animation {
+    0 {
+        display: block;
+    }
+    00 {
+        display: block;
+    }
+}
+
+#title {
+    -skrollr-animation-name: title-animation;
+}
+
+@-skrollr-keyframes title-animation {
+    0 {
+        position: fixed;
+        bottom: 42vh;
+        color: #DDF0FF;
+    }
+    800 {
+        position: fixed;
+        bottom: 0px;
+        color: #ffffff;
+    }
+    1000 {
+        position: relative;
+        bottom: 0px;
+        color: #ffffff;
+    }
+}
+
+#quad-1 polygon {
+    transform-origin: 50% 50%;
+}
+
+#quad-2 polygon {
+    transform-origin: 50% 50%;
+}
+
+#quad-3 polygon {
+    transform-origin: 50% 50%;
+}
+
+#quad-4 polygon {
+    transform-origin: 50% 50%;
+}
+
+#quad-1 polygon:nth-child(5n) {
+    -skrollr-animation-name: quad-1-animation-1;
+}
+
+#quad-1 polygon:nth-child(5n+1) {
+    -skrollr-animation-name: quad-1-animation-2;
+}
+
+#quad-1 polygon:nth-child(5n+2) {
+    -skrollr-animation-name: quad-1-animation-3;
+}
+
+#quad-1 polygon:nth-child(5n+3) {
+    -skrollr-animation-name: quad-1-animation-4;
+}
+
+#quad-1 polygon:nth-child(5n+4) {
+    -skrollr-animation-name: quad-1-animation-5;
+}
+
+@-skrollr-keyframes quad-1-animation-1 {
+    0 {
+        transform: translate(-60vw, -60vh)rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-1-animation-2 {
+    100 {
+        transform: translate(-60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-1-animation-3 {
+    200 {
+        transform: translate(-60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-1-animation-4 {
+    300 {
+        transform: translate(-60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-1-animation-5 {
+    400 {
+        transform: translate(-60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+
+/* QUAD 2 */
+
+#quad-2 polygon:nth-child(5n) {
+    -skrollr-animation-name: quad-2-animation-1;
+}
+
+#quad-2 polygon:nth-child(5n+1) {
+    -skrollr-animation-name: quad-2-animation-2;
+}
+
+#quad-2 polygon:nth-child(5n+2) {
+    -skrollr-animation-name: quad-2-animation-3;
+}
+
+#quad-2 polygon:nth-child(5n+3) {
+    -skrollr-animation-name: quad-2-animation-4;
+}
+
+#quad-2 polygon:nth-child(5n+4) {
+    -skrollr-animation-name: quad-2-animation-5;
+}
+
+@-skrollr-keyframes quad-2-animation-1 {
+    0 {
+        transform: translate(60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-2-animation-2 {
+    100 {
+        transform: translate(60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-2-animation-3 {
+    200 {
+        transform: translate(60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-2-animation-4 {
+    300 {
+        transform: translate(60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-2-animation-5 {
+    400 {
+        transform: translate(60vw, -60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+
+/* QUAD 3 */
+
+#quad-3 polygon:nth-child(5n) {
+    -skrollr-animation-name: quad-3-animation-1;
+}
+
+#quad-3 polygon:nth-child(5n+1) {
+    -skrollr-animation-name: quad-3-animation-2;
+}
+
+#quad-3 polygon:nth-child(5n+2) {
+    -skrollr-animation-name: quad-3-animation-3;
+}
+
+#quad-3 polygon:nth-child(5n+3) {
+    -skrollr-animation-name: quad-3-animation-4;
+}
+
+#quad-3 polygon:nth-child(5n+4) {
+    -skrollr-animation-name: quad-3-animation-5;
+}
+
+@-skrollr-keyframes quad-3-animation-1 {
+    0 {
+        transform: translate(60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-3-animation-2 {
+    100 {
+        transform: translate(60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-3-animation-3 {
+    200 {
+        transform: translate(60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-3-animation-4 {
+    300 {
+        transform: translate(60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-3-animation-5 {
+    400 {
+        transform: translate(60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+
+/* QUAD 4 */
+
+#quad-4 polygon:nth-child(5n) {
+    -skrollr-animation-name: quad-4-animation-1;
+}
+
+#quad-4 polygon:nth-child(5n+1) {
+    -skrollr-animation-name: quad-4-animation-2;
+}
+
+#quad-4 polygon:nth-child(5n+2) {
+    -skrollr-animation-name: quad-4-animation-3;
+}
+
+#quad-4 polygon:nth-child(5n+3) {
+    -skrollr-animation-name: quad-4-animation-4;
+}
+
+#quad-4 polygon:nth-child(5n+4) {
+    -skrollr-animation-name: quad-4-animation-5;
+}
+
+@-skrollr-keyframes quad-4-animation-1 {
+    0 {
+        transform: translate(-60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-4-animation-2 {
+    100 {
+        transform: translate(-60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-4-animation-3 {
+    200 {
+        transform: translate(-60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-4-animation-4 {
+    300 {
+        transform: translate(-60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@-skrollr-keyframes quad-4-animation-5 {
+    400 {
+        transform: translate(-60vw, 60vh) rotate(180deg);
+    }
+    800 {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
